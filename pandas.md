@@ -2,17 +2,105 @@ import pandas as pd
 
 # pd.Dataframe(data, index, columns, dtype)
 
-diccionario = 
+data = {
+    "Nombre": ["Ana", "Juan", "Luisa"],
+    "Edad": [25, 30, 22],
+    "Ciudad": ["Lima", None, "Bogotá"]  # Permite strings y nulos
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+
+# DataFrame a Matriz (solo funciona si todas las columnas son numéricas)
+matriz_from_df = df.values  # o df.to_numpy()
+
+# Matriz a DataFrame
+df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
+
+
+
+https://pandas.pydata.org/docs/reference/api/pandas.Series.html
+nums = [1, 2, 3, 4, 5]
+
+s = pd.Series(nums, index = ['aa', 'bb', 'cc', 'dd', 'ee'])
+print(s)
+
+
+list(s.index)
+
+values = list(s.values)
+values
+
+
+dct = {
+    'name':'Asabeneh',
+    'country':'Finland',
+    'city':'Helsinki'
+}
+s = pd.Series(dct)
+print(s)
+
+
+https://interactivechaos.com/es/manual/tutorial-de-numpy/las-funciones-linspace-y-logspace
+
+s = pd.Series(np.linspace(5, 20, 100)) # linspace(starting, end, items)
+print(s)
+----------------------------------------------------------------------------------------------------------------------
 
 Leer archivo .csv
 
-df =pd.read_csv(r'C:\Users\victor\Desktop\Data Science con Python - Numpy _ Pandas [2023]\1.3\Info_pais.csv', encoding="ISO-8859-1", delimiter=";")
+df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
-df_nations = pd.read_csv("https://raw.githubusercontent.com/DireccionAcademicaADL/Nations-DB/main/nations.csv", encoding="ISO-8859-1")
 
 ----------------------------------------------------------------------------------------------------------------------
+```pd explorando Datos.
+  Serie o estructura unidimensional.
+  Dataframes o estructura bidimensional
+  Los métodos pandas.
+  pd.Series.metodo 
+  pd.DataFrame.metodo
+    read 
+        Leer archivos csv, excel, json, sql, HTML, etc.
+    head 
+        Leer los primeros 5 elementos de la estructura
+    tail 
+        Leer los ultimos 5 elementos de la estructura
+    dtype
+        Devuelve el tipo de datos de cada columna
+    colums 
+        Devuelve una lista con todos los nombres de las columnas de un DataFrame
+    shape 
+        Devuelve una tupla con el número de filas y columnas de un DataFrame
+    unique
+        pd.unique(df['Nombre_columna'])
+        Devuelve una matriz (array) con los valores únicos de una serie o columna.
+    nunique
+        pd.nunique(df['Nombre_columna'])
+        Recorre una serie o columna y cuenta cuántos valores diferentes hay
+```
 
 
+```pd calculando Datos.
+
+    describe
+   df['nombre_columna'].describe() 
+        Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
+        std(standard deviation). Es una medida de la dispersión de los datos respecto a la media, indicando qué tan alejados están los valores individuales de la media
+    min 
+        Leer los primeros 5 elementos de la estructura
+    max 
+        Leer los ultimos 5 elementos de la estructura
+    mean
+        Devuelve el tipo de datos de cada columna
+    colums 
+        Devuelve una lista con todos los nombres de las columnas de un DataFrame
+    std 
+        Devuelve una tupla con el número de filas y columnas de un DataFrame
+    count
+        pd.unique(xxx['Nombre_columna'])
+        Devuelve una matriz (array) con los valores únicos de una serie o columna.
+```
 # Operaciones comunes con Pandas
 
 ## 1. Transformación de datos
@@ -48,6 +136,10 @@ df_nations = pd.read_csv("https://raw.githubusercontent.com/DireccionAcademicaAD
 
 ## 2. Subconjuntos de filas
 
+
+- `df.info() `
+    Imprime cantidad de no nulos de cada atributo y el tipo de dato que es
+
 - `df[df.columna2 < 10]`  
   Extrae las filas que cumplen el criterio de la columna definida (en este caso, valor < 10 en columna2).
 
@@ -62,6 +154,12 @@ df_nations = pd.read_csv("https://raw.githubusercontent.com/DireccionAcademicaAD
 
 - `df.head(n)`  
   Muestra las primeras `n` filas del DataFrame.
+
+-  `df.columns`
+    Muestra nombre de las columnas
+
+-   `df_nations["nombre_columna"].head(198)`
+    Para mostrar una columna, indicando el numero de datos
 
 - `df.tail(n)`  
   Muestra las últimas `n` filas del DataFrame.
@@ -101,7 +199,21 @@ df_nations = pd.read_csv("https://raw.githubusercontent.com/DireccionAcademicaAD
 - `df.describe()`  
   Devuelve estadísticos descriptivos básicos (media, percentiles, etc.) para cada columna numérica.
 
+
+- `df.["nombre_variable"].mean()`
+    Promedio  de la variable
+
+- `df.["nombre_variable"].count()`
+    Cuenta el numero de datos existentes
+
+- `df.["nombre_variable"].min()`
+    Dato mas bajo de una variable
+
+- `df.["nombre_variable"].max()`
+    Dato mas alto de una variable
+
 ---
+
 
 ## 5. Agrupación
 
@@ -111,6 +223,18 @@ df_nations = pd.read_csv("https://raw.githubusercontent.com/DireccionAcademicaAD
 - `df.groupby(level="index")`  
   Agrupa datos por los valores del índice del DataFrame.
 
+# Estadísticas para todas las columnas numéricas por sexo
+grouped_data.describe()
+# Regresa la media de cada columna numérica por sexo
+grouped_data.mean()
 ---
 
-Fuente: [www.desafiolatam.com](https://www.desafiolatam.com)
+# Para observar un atributo categórico usaremos una tabla de frecuencias
+df_nations["region"].value_counts()
+
+# Otra forma de hacer este conteo, puede ser a través de una agrupación
+df.groupby(["region"])[["country"]].count()
+
+
+# Usando where(), crearemos una variable nueva de co2, en dónde identifiquemos qué países están por debajo de la media, y qué países por sobre la media.
+df_nations["co2_recodificada"] = np.where(df_nations["co2"]> df_nations["co2"].mean(), 1, 0)
