@@ -52,7 +52,6 @@ Leer archivo .csv
 
 df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
-
 ----------------------------------------------------------------------------------------------------------------------
 ```pd explorando Datos.
   Serie o estructura unidimensional.
@@ -72,25 +71,25 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
         Devuelve una lista con todos los nombres de las columnas de un DataFrame
     shape 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
+
+```
+
+
+```pd calculando Datos.
+df['nombre_columna'].metodo() 
+
+    describe
+        Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
+    min 
+        Leer los primeros 5 elementos de la estructura
+    max 
+        Leer los ultimos 5 elementos de la estructura
     unique
         pd.unique(df['Nombre_columna'])
         Devuelve una matriz (array) con los valores únicos de una serie o columna.
     nunique
         pd.nunique(df['Nombre_columna'])
         Recorre una serie o columna y cuenta cuántos valores diferentes hay
-```
-
-
-```pd calculando Datos.
-
-    describe
-   df['nombre_columna'].describe() 
-        Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
-        std(standard deviation). Es una medida de la dispersión de los datos respecto a la media, indicando qué tan alejados están los valores individuales de la media
-    min 
-        Leer los primeros 5 elementos de la estructura
-    max 
-        Leer los ultimos 5 elementos de la estructura
     mean
         Devuelve el tipo de datos de cada columna
     colums 
@@ -98,8 +97,7 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
     std 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
     count
-        pd.unique(xxx['Nombre_columna'])
-        Devuelve una matriz (array) con los valores únicos de una serie o columna.
+        Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
 ```
 # Operaciones comunes con Pandas
 
@@ -108,8 +106,11 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 - `pd.melt(df)`  
   Convierte columnas en filas, reuniendo la información.
 
-- `pd.pivot(df)`  
-  Convierte filas en columnas, "esparciendo" la información.
+- `pd.pivot(df)`
+  pivot_df = reservas.pivot_table( columns='Noches', 
+                                 values='Total Ganancias', 
+                                 aggfunc='sum')  # or other appropriate aggregation function like 'mean', 'first' etc.
+  Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
 
 - `pd.concat([df1, df2])`  
   Apila dos datasets (juntando por filas) y los convierte en uno. Ambos datasets deben tener las mismas columnas.
@@ -119,6 +120,9 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
 - `df.sort_values("variable")`  
   Ordena las filas del dataset en base a los valores de la "variable" (por defecto de menor a mayor).
+
+- `df.sort_values("variable", ascending=False)`  
+  Ordena las filas del dataset en base a los valores de la "variable" (por defecto de mayor a menor).
 
 - `df.rename(columns={"nombre_antiguo": "nombre_nuevo"})`  
   Renombra las columnas de un dataset.
@@ -133,6 +137,33 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
   Elimina del DataFrame la lista de columnas especificadas.
 
 ---
+----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 2. Subconjuntos de filas
 
