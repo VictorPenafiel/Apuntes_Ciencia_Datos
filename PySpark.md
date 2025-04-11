@@ -1,5 +1,4 @@
-# 
-### Instalamos la librería pyspark, Java 8 y seteamos las variables de entorno para que no devuelva error:
+ ### Instalamos la librería pyspark, Java 8 y seteamos las variables de entorno para que no devuelva error:
 	!pip install pyspark
     !apt-get install openjdk-8-jdk-headless -qq > /dev/null
 
