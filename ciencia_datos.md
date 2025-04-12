@@ -1,14 +1,45 @@
-## cuadernos Jupyter
+### cuadernos Jupyter
 https://jupyter.org/
 
-## Este es un gestor que te instala todo lo que puedes necesitar
+### Gestor que te instala todo lo que puedes necesitar
 https://anaconda.org/anaconda/conda
 
-### Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación. Cuando necesites más capacidad de cómputo, puedes utilizar esta plataforma. 
+### Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación.
 https://colab.research.google.com/ 
 
 
 ----------------------------------------------------------------------------------------------------------------------
+
+# Aprendizaje supervisado
+## Regresión- Variable numerica, predecir un valor numerico (Continua)
+
+from sklearn.linear_model import LinearRegression
+
+# Datos: [[kilómetros, año]], precio
+X = [[100000, 2010], [50000, 2015], [20000, 2020]]
+y = [5000, 15000, 25000]  # Precios en USD
+
+modelo = LinearRegression()
+modelo.fit(X, y)
+prediccion = modelo.predict([[80000, 2012]])
+print(prediccion)  # Ejemplo: [12000.50]
+
+
+#Clasificación Etiquetas, predecir etiqueta o clase (Discretas)
+
+from sklearn.ensemble import RandomForestClassifier
+
+# Datos: [[núm_palabras, contiene_emoji]], etiqueta
+X = [[50, 0], [20, 1], [100, 0]]
+y = [0, 1, 0]  # 0: No spam, 1: Spam
+
+modelo = RandomForestClassifier()
+modelo.fit(X, y)
+prediccion = modelo.predict([[80, 1]])
+print(prediccion)  # Ejemplo: [1] (spam)
+
+
+
 
 
 El 1 es teoría, el 2 es proyecto.
@@ -17,28 +48,22 @@ El 1 es teoría, el 2 es proyecto.
 1
 https://www.youtube.com/watch?v=A6FiCDoz8_4&t=322s&ab_channel=DotCSV
 
- 
 
 2
 https://www.youtube.com/watch?v=-_A_AAxqzCg&t=624s&ab_channel=DotCSV
 
- 
 
 ----------------------------------------------------------------------------------------------------------------------
-
- 
 
 ## Regresión lineal y mínimos cuadrados ordinarios
 1
 https://www.youtube.com/watch?v=k964_uNn3l0&ab_channel=DotCSV
+
 2
 https://www.youtube.com/watch?v=w2RJ1D6kz-o&t=215s&ab_channel=DotCSV
 
- 
 
 ----------------------------------------------------------------------------------------------------------------------
-
- 
 
 ## Red neuronal
 1
@@ -46,17 +71,13 @@ https://www.youtube.com/watch?v=MRIv2IwFTPg&t=453s&ab_channel=DotCSV
 https://www.youtube.com/watch?v=uwbHOpp9xkc&ab_channel=DotCSV
 https://www.youtube.com/watch?v=eNIqz_noix8&ab_channel=DotCSV
 https://www.youtube.com/watch?v=M5QHwkkHgAA&ab_channel=DotCSV
+
 2
 https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV
 
-
-
-
 ----------------------------------------------------------------------------------------------------------------------
 
-
 ### Otros proyectos
-
 
 ## Ataque adversario
 https://www.youtube.com/watch?v=JoQx39CoXW8&t=314s&ab_channel=DotCSV
@@ -66,4 +87,3 @@ https://www.youtube.com/watch?v=YsrMGcgfETY&t=4423s&ab_channel=DotCSV
 
 ## Programa el juego de la vida
 https://www.youtube.com/watch?v=qPtKv9fSHZY&ab_channel=DotCSV
- 

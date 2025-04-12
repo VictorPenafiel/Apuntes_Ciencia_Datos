@@ -53,7 +53,9 @@ Leer archivo .csv
 df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
 ----------------------------------------------------------------------------------------------------------------------
-```pd explorando Datos.
+```
+# Explorando Datos.
+
   Serie o estructura unidimensional.
   Dataframes o estructura bidimensional
   Los métodos pandas.
@@ -138,28 +140,6 @@ df['nombre_columna'].metodo()
 
 ---
 ----------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
