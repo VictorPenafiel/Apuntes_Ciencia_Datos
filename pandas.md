@@ -67,21 +67,18 @@ df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
         Leer los primeros 5 elementos de la estructura
     tail 
         Leer los ultimos 5 elementos de la estructura
-    dtype
-        Devuelve el tipo de datos de cada columna
+    describe
+        Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
     colums 
         Devuelve una lista con todos los nombres de las columnas de un DataFrame
     shape 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
-
 ```
 
 
 ```pd calculando Datos.
 df['nombre_columna'].metodo() 
 
-    describe
-        Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
     min 
         Leer los primeros 5 elementos de la estructura
     max 
@@ -94,16 +91,48 @@ df['nombre_columna'].metodo()
         Recorre una serie o columna y cuenta cuántos valores diferentes hay
     mean
         Devuelve el tipo de datos de cada columna
-    colums 
-        Devuelve una lista con todos los nombres de las columnas de un DataFrame
     std 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
     count
         Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
+    dtype
+        Devuelve el tipo de datos de cada columna
+
 ```
 # Operaciones comunes con Pandas
 
 ## 1. Transformación de datos
+df['nombre_columna'].metodo() 
+
+    melt 
+        Convierte columnas en filas, reuniendo la información.
+    pivot 
+        ```
+        pivot_df = reservas.pivot_table( columns='Noches', 
+                                 values='Total Ganancias', 
+                                 aggfunc='sum')  # or other appropriate aggregation function like 'mean', 'first' etc.
+    Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
+        ```
+    concat
+        ```
+        pd.concat([df1, df2])
+        Apila dos datasets (juntando por filas) y los convierte en uno. Ambos datasets deben tener las mismas columnas.
+
+        pd.concat([df1, df2], axis=1)
+        Junta dos datasets anexando columnas. Ambos datasets deben tener las mismas filas.
+        ```
+        
+    sort_values
+        pd.nunique(df['Nombre_columna'])
+        Recorre una serie o columna y cuenta cuántos valores diferentes hay
+    rename
+        Devuelve el tipo de datos de cada columna
+    drop
+        Devuelve una tupla con el número de filas y columnas de un DataFrame
+    count
+        Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
+    dtype
+        Devuelve el tipo de datos de cada columna
 
 - `pd.melt(df)`  
   Convierte columnas en filas, reuniendo la información.
