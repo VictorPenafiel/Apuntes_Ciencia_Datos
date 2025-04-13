@@ -107,12 +107,12 @@ df['nombre_columna'].metodo()
     melt 
         Convierte columnas en filas, reuniendo la información.
     pivot 
-        ```
+        
         pivot_df = reservas.pivot_table( columns='Noches', 
                                  values='Total Ganancias', 
                                  aggfunc='sum')  # or other appropriate aggregation function like 'mean', 'first' etc.
     Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
-        ```
+        
     concat
         ```
         pd.concat([df1, df2])
@@ -121,7 +121,7 @@ df['nombre_columna'].metodo()
         pd.concat([df1, df2], axis=1)
         Junta dos datasets anexando columnas. Ambos datasets deben tener las mismas filas.
         ```
-        
+
     sort_values
         pd.nunique(df['Nombre_columna'])
         Recorre una serie o columna y cuenta cuántos valores diferentes hay
