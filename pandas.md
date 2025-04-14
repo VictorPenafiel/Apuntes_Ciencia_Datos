@@ -21,31 +21,26 @@ df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
 
 https://pandas.pydata.org/docs/reference/api/pandas.Series.html
 
-nums = [1, 2, 3, 4, 5]
-
-s = pd.Series(nums, index = ['aa', 'bb', 'cc', 'dd', 'ee'])
-print(s)
-
-
-list(s.index)
-
-values = list(s.values)
-values
-
-
-dct = {
-    'name':'Asabeneh',
-    'country':'Finland',
-    'city':'Helsinki'
-}
-s = pd.Series(dct)
-print(s)
+        nums = [1, 2, 3, 4, 5]
+        s = pd.Series(nums, index = ['aa', 'bb', 'cc', 'dd', 'ee'])
+        print(s)
+        list(s.index)
+        values = list(s.values)
+        values
+        dct = {
+            'name':'Asabeneh',
+            'country':'Finland',
+            'city':'Helsinki'
+        }
+        s = pd.Series(dct)
+        print(s)
 
 
 https://interactivechaos.com/es/manual/tutorial-de-numpy/las-funciones-linspace-y-logspace
 
 s = pd.Series(np.linspace(5, 20, 100)) # linspace(starting, end, items)
 print(s)
+
 ----------------------------------------------------------------------------------------------------------------------
 
 Leer archivo .csv
