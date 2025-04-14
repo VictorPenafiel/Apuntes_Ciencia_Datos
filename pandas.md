@@ -1,6 +1,6 @@
 import pandas as pd
 
-# pd.Dataframe(data, index, columns, dtype)
+### pd.Dataframe(data, index, columns, dtype)
 
 data = {
     "Nombre": ["Ana", "Juan", "Luisa"],
@@ -12,15 +12,15 @@ df = pd.DataFrame(data)
 print(df)
 
 
-# DataFrame a Matriz (solo funciona si todas las columnas son numéricas)
+### DataFrame a Matriz (solo funciona si todas las columnas son numéricas)
 matriz_from_df = df.values  # o df.to_numpy()
 
-# Matriz a DataFrame
+### Matriz a DataFrame
 df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
 
 
-
 https://pandas.pydata.org/docs/reference/api/pandas.Series.html
+
 nums = [1, 2, 3, 4, 5]
 
 s = pd.Series(nums, index = ['aa', 'bb', 'cc', 'dd', 'ee'])
@@ -113,64 +113,27 @@ df['nombre_columna'].metodo()
                                  aggfunc='sum')  # or other appropriate aggregation function like 'mean', 'first' etc.
     Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
         
-    concat
-        ```
-        pd.concat([df1, df2])
+    concat([df1, df2])
         Apila dos datasets (juntando por filas) y los convierte en uno. Ambos datasets deben tener las mismas columnas.
 
         pd.concat([df1, df2], axis=1)
         Junta dos datasets anexando columnas. Ambos datasets deben tener las mismas filas.
-        ```
 
     sort_values
-        pd.nunique(df['Nombre_columna'])
-        Recorre una serie o columna y cuenta cuántos valores diferentes hay
-    rename
-        Devuelve el tipo de datos de cada columna
+      Ordena las filas del dataset en base a los valores de la "variable" (por defecto de menor a mayor).
+
+        df.sort_values("variable", ascending=False)
+        Ordena las filas del dataset en base a los valores de la "variable" (por defecto de mayor a menor).
+
+        df.sort_index()
+        Ordena el índice de un DataFrame.
+
+    rename(columns={"nombre_antiguo": "nombre_nuevo"})
+        Renombra las columnas de un dataset.
     drop
-        Devuelve una tupla con el número de filas y columnas de un DataFrame
-    count
-        Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
-    dtype
-        Devuelve el tipo de datos de cada columna
-
-- `pd.melt(df)`  
-  Convierte columnas en filas, reuniendo la información.
-
-- `pd.pivot(df)`
-  pivot_df = reservas.pivot_table( columns='Noches', 
-                                 values='Total Ganancias', 
-                                 aggfunc='sum')  # or other appropriate aggregation function like 'mean', 'first' etc.
-  Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
-
-- `pd.concat([df1, df2])`  
-  Apila dos datasets (juntando por filas) y los convierte en uno. Ambos datasets deben tener las mismas columnas.
-
-- `pd.concat([df1, df2], axis=1)`  
-  Junta dos datasets anexando columnas. Ambos datasets deben tener las mismas filas.
-
-- `df.sort_values("variable")`  
-  Ordena las filas del dataset en base a los valores de la "variable" (por defecto de menor a mayor).
-
-- `df.sort_values("variable", ascending=False)`  
-  Ordena las filas del dataset en base a los valores de la "variable" (por defecto de mayor a menor).
-
-- `df.rename(columns={"nombre_antiguo": "nombre_nuevo"})`  
-  Renombra las columnas de un dataset.
-
-- `df.sort_index()`  
-  Ordena el índice de un DataFrame.
-
-- `df.reset_index()`  
-  Redefine el índice de un DataFrame asignando el número de fila correspondiente, convirtiendo el índice previo en una columna.
-
-- `df.drop(columns=["var1", "var2"])`  
-  Elimina del DataFrame la lista de columnas especificadas.
-
----
-----------------------------------------------------------------------------------------------------------------------
-
-
+        Elimina del DataFrame la lista de columnas especificadas.
+    reset_index
+        Redefine el índice de un DataFrame asignando el número de fila correspondiente, convirtiendo el índice previo en una columna.
 
 
 
