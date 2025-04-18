@@ -116,9 +116,7 @@ modelo = RandomForestClassifier()
 modelo.fit(X, y)
 prediccion = modelo.predict([[80, 1]])
 print(prediccion)  # Ejemplo: [1] (spam)
-
-
-
+----------------------------------------------------------------------------------------------------------------------
 
 
 El 1 es teoría, el 2 es proyecto.

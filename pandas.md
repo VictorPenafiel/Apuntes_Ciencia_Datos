@@ -1,3 +1,9 @@
+Serie o estructura unidimensional.
+Dataframes o estructura bidimensional
+Los métodos pandas.
+  pd.Series.metodo 
+  pd.DataFrame.metodo
+
 import pandas as pd
 
 ### pd.Dataframe(data, index, columns, dtype)
@@ -47,29 +53,33 @@ Leer archivo .csv
 
 df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
-----------------------------------------------------------------------------------------------------------------------
-```
-# Explorando Datos.
+Convertir archivo CSV a XLSX
+pd.read_csv('data.csv').to_excel('data.xlsx', index=False)
 
-  Serie o estructura unidimensional.
-  Dataframes o estructura bidimensional
-  Los métodos pandas.
-  pd.Series.metodo 
-  pd.DataFrame.metodo
+Convertir archivo XLSX a CSV
+pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
+----------------------------------------------------------------------------------------------------------------------
+
+
+## Explorando Datos.
+df.metodo() 
+```
     read 
         Leer archivos csv, excel, json, sql, HTML, etc.
     head 
         Leer los primeros 5 elementos de la estructura
     tail 
         Leer los ultimos 5 elementos de la estructura
+    info
+        Muestra el tipo de datos de las columnas, el número de valores no nulos (non-null) y la memoria utilizada por la estructura de datos.
     describe
         Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
+```
+df.metodo
     colums 
         Devuelve una lista con todos los nombres de las columnas de un DataFrame
     shape 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
-```
-
 
 ```pd calculando Datos.
 df['nombre_columna'].metodo() 
@@ -84,19 +94,27 @@ df['nombre_columna'].metodo()
     nunique
         pd.nunique(df['Nombre_columna'])
         Recorre una serie o columna y cuenta cuántos valores diferentes hay
-    mean
-        Devuelve el tipo de datos de cada columna
-    std 
-        Devuelve una tupla con el número de filas y columnas de un DataFrame
+    isnull
+        Identificar valores nulos (faltantes) en un DataFrame o Series
+    dropna()
+        Elimina las filas que contienen datos nulos,
+    mean (Media)
+        Calcular los valores promedio  en un DataFrame o Serie.
+    var (Varianza)
+        Calcula la varianza de los datos en un DataFrame o Serie.
+    cov 
+        Calcula la matriz de covarianza de las columnas en el DataFrame.
+    std (Desviación estándar)
+        Calcular la desviación estándar de los valores en un DataFrame o Series.  
+    corr
+        Calcula la correlación entre las columnas de un DataFrame.
     count
         Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
     dtype
         Devuelve el tipo de datos de cada columna
 
 ```
-# Operaciones comunes con Pandas
-
-## 1. Transformación de datos
+##  Transformación de datos
 df['nombre_columna'].metodo() 
 
     melt 
@@ -132,7 +150,7 @@ df['nombre_columna'].metodo()
 
 
 
-## 2. Subconjuntos de filas
+## Subconjuntos de filas
 
 
 - `df.info() `
