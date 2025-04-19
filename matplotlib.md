@@ -1,22 +1,18 @@
-Creación de gráficos
+# Creación de gráficos
 
-# Importar el módulo pyplot con el alias plt
+## Importar el módulo pyplot con el alias plt
 import matplotlib.pyplot as plt
-# Crear la figura y los ejes
+## Crear la figura y los ejes
 fig, ax = plt.subplots()
-# Dibujar puntos
+## Dibujar puntos
 ax.scatter(x = [1, 2, 3], y = [3, 2, 1])
-# Guardar el gráfico en formato png
+## Guardar el gráfico en formato png
 plt.savefig('diagrama-dispersion.png')
-# Mostrar el gráfico
+## Mostrar el gráfico
 plt.show()
-
-
-
-----------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------
 
-Histogramas
+## Histogramas
 
     hist(x, bins): Dibuja un histograma con las frecuencias resultantes de agrupar los datos de la lista x en las clases definidas por la lista bins.
 
@@ -31,8 +27,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de caja y bigotes (boxplot)
-
+## Diagramas de caja y bigotes (boxplot)
 
     boxplot(x): Dibuja un diagrama de caja y bigotes con los datos de la lista x.
 
@@ -44,7 +39,7 @@ ax.boxplot([1, 2, 1, 2, 3, 4, 3, 3, 5, 7])
 plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
-Diagramas de dispersión o puntos
+## Diagramas de dispersión o puntos
 
 scatter(x, y): Dibuja un diagrama de puntos con las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y. 
 
@@ -57,13 +52,11 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-
-Diagramas de líneas
+## Diagramas de líneas
 
     plot(x, y): Dibuja un polígono con los vértices dados por las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y.
 
 https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot
-
 
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
@@ -72,8 +65,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-
-Diagramas de areas
+## Diagramas de areas
 
     fill_between(x, y): Dibuja el area bajo el polígono con los vértices dados por las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y.
 
@@ -84,10 +76,9 @@ fig, ax = plt.subplots()
 ax.fill_between([1, 2, 3, 4], [1, 2, 0, 0.5])
 plt.show()
 
-
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de barras verticales
+## Diagramas de barras verticales
 
     bar(x, y): Dibuja un diagrama de barras verticales donde x es una lista con la posición de las barras en el eje X, e y es una lista con la altura de las barras en el eje Y.
 
@@ -99,10 +90,9 @@ ax.bar([1, 2, 3], [3, 2, 1])
 plt.show()
 
 
-
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de barras horizontales
+## Diagramas de barras horizontales
 
     barh(x, y): Dibuja un diagrama de barras horizontales donde x es una lista con la posición de las barras en el eje Y, e y es una lista con la longitud de las barras en el eje X
 
@@ -116,7 +106,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de sectores
+## Diagramas de sectores
 
     pie(x): Dibuja un diagrama de sectores con las frecuencias de la lista x. 
 
@@ -129,9 +119,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-
-Diagramas de violín
-
+## Diagramas de violín
 
     violinplot(x): Dibuja un diagrama de violín con los datos de la lista x.
 
@@ -144,7 +132,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de contorno
+## Diagramas de contorno
 
 
     contourf(x, y, z): Dibuja un diagrama de contorno con las curvas de nivel de la superficie dada por los puntos con las coordenadas de las listas x, y y z en los ejes X, Y y Z respectivamente.
@@ -162,7 +150,7 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Mapas de color
+## Mapas de color
 
 
     imshow(x): Dibuja un mapa de color a partir de una matriz (array bidimensiona) x.
@@ -174,10 +162,12 @@ fig, ax = plt.subplots()
 x = np.random.random((16, 16))
 ax.imshow(x)
 plt.show()
+
 ----------------------------------------------------------------------------------------------------------------------
 
-#Cambiar el aspecto de los gráficos
-Títulos
+# Cambiar el aspecto de los gráficos
+
+## Títulos
 Para añadir un título principal al gráfico se utiliza el siguiente método:
 
     ax.set_title(titulo, loc=alineacion, fontdict=fuente) : Añade un título con el contenido de la cadena titulo a los ejes ax. El parámetro loc indica la alineación del título, que puede ser 'left' (izquierda), 'center' (centro) o 'right' (derecha), y el parámetro fontdict indica mediante un diccionario las características de la fuente (la el tamaño fontisize, el grosor fontweight o el color color).
@@ -192,7 +182,7 @@ ax.set_title('Evolución de la temperatura diaria', loc = "left", fontdict = {'f
 plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
-Rejilla
+## Rejilla
 
 ax.grid(axis=ejes, color=color, linestyle=estilo) : Dibuja una rejilla en los ejes de ax. El parámetro axis indica los ejes sobre los que se dibuja la regilla y puede ser 'x' (eje x), 'y' (eje y) o 'both' (ambos). Los parámetros color y linestyle establecen el color y el estilo de las líneas de la rejilla, y pueden tomar los mismos valores vistos en los apartados de colores y líneas.
 
