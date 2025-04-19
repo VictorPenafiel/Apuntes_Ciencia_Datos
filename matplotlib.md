@@ -1,8 +1,8 @@
 # Creación de gráficos
 
-## Importar el módulo pyplot con el alias plt
+### Importar el módulo pyplot con el alias plt
 import matplotlib.pyplot as plt
-## Crear la figura y los ejes
+### Crear la figura y los ejes
 fig, ax = plt.subplots()
 ## Dibujar puntos
 ax.scatter(x = [1, 2, 3], y = [3, 2, 1])
