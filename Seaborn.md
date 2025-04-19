@@ -14,6 +14,19 @@
         hue="smoker", style="smoker", size="size",
     )
 
+```
+import seaborn as sns
+
+# Configuración
+sns.set_theme(style="whitegrid")
+
+# Datos
+tips = sns.load_dataset("tips")
+
+# Gráfico combinado
+g = sns.FacetGrid(tips, col="time", hue="smoker")
+g.map(sns.scatterplot, "total_bill", "tip").add_legend()
+```
 
 # Principales Métodos de Seaborn
 
@@ -30,137 +43,75 @@ Muestran relaciones entre variables numéricas.
         Versión flexible (combina scatter/line).
             sns.relplot(x="col1", y="col2", hue="categoría", data=df)
 ```
-
-# Principales Métodos de Seaborn
-
-Seaborn es una biblioteca de visualización de datos estadísticos en Python basada en Matplotlib. Ofrece una interfaz de alto nivel para crear gráficos atractivos e informativos.
-
-## 📊 Gráficos Relacionales
-Muestran relaciones entre variables numéricas.
-
-### `scatterplot()`
-- **Descripción**: Gráfico de dispersión
-- **Uso**: 
-  ```python
-  sns.scatterplot(x="col1", y="col2", data=df)
-
-lineplot()
-
-    Descripción: Gráfico de líneas para series temporales
-
-    Uso:
-    python
-
-    sns.lineplot(x="fecha", y="valor", data=df)
-
-relplot()
-
-    Descripción: Versión flexible que combina scatter y line plots
-
-    Uso:
-    python
-
-    sns.relplot(x="col1", y="col2", hue="categoría", data=df)
-
-📈 Gráficos de Distribución
-
+##  Gráficos de Distribución
 Visualizan distribuciones de datos.
-histplot()
 
-    Descripción: Histograma
+```
+    histplot
+        Histograma
+            sns.histplot(x="edad", data=df, bins=20)
+    kdeplot
+        Densidad de kernel (suavizado).
+            sns.kdeplot(x="edad", data=df, hue="sexo")
+    displot
+        Versión flexible (histograma/KDE).
+            sns.displot(x="edad", kind="kde", data=df)
+    ecdfplot
+        Función de distribución acumulada
+            sns.ecdfplot(x="edad", data=df)
+```
 
-    Uso:
-    python
+## Gráficos Categóricos
+Comparan variables categóricas vs. numéricas.
 
-    sns.histplot(x="edad", data=df, bins=20)
+```
+    barplot
+        Barras con intervalos de confianza.
+            sns.barplot(x="categoría", y="valor", data=df)
+    boxplot
+        Diagrama de cajas (percentiles).
+            sns.boxplot(x="grupo", y="valor", data=df)
+    violinplot
+        Mezcla de boxplot + KDE.
+            sns.violinplot(x="grupo", y="valor", data=df)
+    catplot
+        Versión flexible (combina métodos categóricos).
+            sns.catplot(x="grupo", y="valor", kind="box", data=df)
+```
 
-kdeplot()
+## Gráficos Matriciales
+Útiles para datos estructurados (ej: matrices de correlación).
 
-    Descripción: Estimación de densidad kernel
+```
+    heatmap
+        Mapa de calor (ej: correlaciones).
+            sns.heatmap(corr_matrix, annot=True)
+    clustermap
+        Heatmap con clustering jerárquico.
+            sns.clustermap(corr_matrix)
+```
 
-    Uso:
-    python
+## Gráficos de Regresión
+Muestran relaciones estadísticas con ajustes.
 
-    sns.kdeplot(x="edad", data=df, hue="sexo")
+```
+    regplot
+        Gráfico de regresión lineal.
+            sns.regplot(x="col1", y="col2", data=df)
+    lmplot
+        Versión flexible (hue/col/row).	
+            sns.lmplot(x="col1", y="col2", hue="grupo", data=df)
+```
 
-📉 Gráficos Categóricos
-
-Comparan variables categóricas vs numéricas.
-barplot()
-
-    Descripción: Diagrama de barras
-
-    Uso:
-    python
-
-    sns.barplot(x="categoría", y="valor", data=df)
-
-boxplot()
-
-    Descripción: Diagrama de cajas
-
-    Uso:
-    python
-
-    sns.boxplot(x="grupo", y="valor", data=df)
-
-🔥 Gráficos Matriciales
-
-Para datos estructurados.
-heatmap()
-
-    Descripción: Mapa de calor
-
-    Uso:
-    python
-
-    sns.heatmap(corr_matrix, annot=True)
-
-🔄 Gráficos de Regresión
-
-Muestran relaciones estadísticas.
-regplot()
-
-    Descripción: Gráfico de regresión lineal
-
-    Uso:
-    python
-
-    sns.regplot(x="col1", y="col2", data=df)
-
-🎨 Personalización
-set_theme()
-
-    Descripción: Configura el estilo global
-
-    Uso:
-    python
-
-    sns.set_theme(style="darkgrid")
-
-Ejemplo Integrado
-python
-
-import seaborn as sns
-
-# Configuración
-sns.set_theme(style="whitegrid")
-
-# Datos
-tips = sns.load_dataset("tips")
-
-# Gráfico combinado
-g = sns.FacetGrid(tips, col="time", hue="smoker")
-g.map(sns.scatterplot, "total_bill", "tip").add_legend()
-
-Nota: Seaborn es ideal para análisis exploratorios y visualizaciones estadísticas, mientras que Matplotlib ofrece más control para personalizaciones avanzadas.
-
-
-Este resumen en Markdown:
-1. Organiza los métodos por categorías
-2. Incluye descripciones breves
-3. Muestra ejemplos de código formateados
-4. Usa emojis para mejorar la legibilidad
-5. Destaca las secciones principales con encabezados
-6. Incluye un ejemplo integrado al final
-7. Menciona la relación con Matplotlib
+## Personalización y Estilo
+```
+    set_theme
+        Configura el estilo global.
+            sns.set_theme(style="darkgrid")
+    set_palette()
+        Cambia la paleta de colores.	
+            sns.set_palette("husl")
+    FacetGrid
+        Para crear grillas de gráficos
+            g = sns.FacetGrid(df, col="categoría")
+```

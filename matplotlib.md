@@ -176,6 +176,7 @@ ax.imshow(x)
 plt.show()
 ----------------------------------------------------------------------------------------------------------------------
 
+#Cambiar el aspecto de los gráficos
 Títulos
 Para añadir un título principal al gráfico se utiliza el siguiente método:
 
@@ -189,6 +190,7 @@ ax.plot(dias, temperaturas['Madrid'])
 ax.plot(dias, temperaturas['Barcelona'])
 ax.set_title('Evolución de la temperatura diaria', loc = "left", fontdict = {'fontsize':14, 'fontweight':'bold', 'color':'tab:blue'})
 plt.show()
+
 ----------------------------------------------------------------------------------------------------------------------
 Rejilla
 
