@@ -14,7 +14,36 @@ plt.show()
 
 
 ----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 
+Histogramas
+
+    hist(x, bins): Dibuja un histograma con las frecuencias resultantes de agrupar los datos de la lista x en las clases definidas por la lista bins.
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist
+
+import numpy as np
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+x = np.random.normal(5, 1.5, size=1000)
+ax.hist(x, np.arange(0, 11))
+plt.show()
+
+----------------------------------------------------------------------------------------------------------------------
+
+Diagramas de caja y bigotes (boxplot)
+
+
+    boxplot(x): Dibuja un diagrama de caja y bigotes con los datos de la lista x.
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot
+
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.boxplot([1, 2, 1, 2, 3, 4, 3, 3, 5, 7])
+plt.show()
+
+----------------------------------------------------------------------------------------------------------------------
 Diagramas de dispersión o puntos
 
 scatter(x, y): Dibuja un diagrama de puntos con las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y. 
@@ -84,20 +113,6 @@ fig, ax = plt.subplots()
 ax.barh([1, 2, 3], [3, 2, 1])
 plt.show()
 
-----------------------------------------------------------------------------------------------------------------------
-
-Histogramas
-
-    hist(x, bins): Dibuja un histograma con las frecuencias resultantes de agrupar los datos de la lista x en las clases definidas por la lista bins.
-
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist
-
-import numpy as np
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-x = np.random.normal(5, 1.5, size=1000)
-ax.hist(x, np.arange(0, 11))
-plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -114,15 +129,6 @@ plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Diagramas de caja y bigotes
-
-
-    boxplot(x): Dibuja un diagrama de caja y bigotes con los datos de la lista x.
-
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot
-
-
-----------------------------------------------------------------------------------------------------------------------
 
 Diagramas de violín
 
