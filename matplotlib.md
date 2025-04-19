@@ -1,5 +1,6 @@
 # Creación de gráficos
 
+````
 ### Importar el módulo pyplot con el alias plt
 import matplotlib.pyplot as plt
 ### Crear la figura y los ejes
