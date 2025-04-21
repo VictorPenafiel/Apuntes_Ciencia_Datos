@@ -1,16 +1,16 @@
-### cuadernos Jupyter
+Cuadernos Jupyter
 https://jupyter.org/
 
-### Gestor que te instala todo lo que puedes necesitar
+Gestor que te instala todo lo que puedes necesitar
 https://anaconda.org/anaconda/conda
 
-### Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación.
+Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación.
 https://colab.research.google.com/ 
 
 # Google Colab - Guía Completa de Funciones Básicas
 
 
-## 1. MANEJO DE CELDAS
+### MANEJO DE CELDAS
 
 """
 Colab ofrece dos tipos de celdas:
@@ -23,62 +23,58 @@ Atajos útiles:
 - Ejecutar celda: Shift + Enter
 """
 
-## 2. CAMBIO DE DIRECTORIO
+### CAMBIO DE DIRECTORIO
 
 import os
 
-## Directorio actual
+Directorio actual
 print(f"Directorio actual: {os.getcwd()}")
 
-## Cambiar directorio (ejemplo)
+Cambiar directorio (ejemplo)
 nuevo_dir = "/content/sample_data"
 os.chdir(nuevo_dir)
 print(f"Nuevo directorio: {os.getcwd()}")
 
 
-## 3. MANEJO DE ARCHIVOS COMPRIMIDOS
+### MANEJO DE ARCHIVOS COMPRIMIDOS
 
-## Descomprimir archivo zip
+Descomprimir archivo zip
 !unzip "/content/archivo_comprimido.zip" -d "/content/destino"
 
+### DESCARGA DE DATASETS
 
-## 4. DESCARGA DE DATASETS
-
-## Descargar desde URL
+Descargar desde URL
 !wget "https://ejemplo.com/dataset.csv"
 
-
-## 5. EXPORTACIÓN DE ARCHIVOS
+EXPORTACIÓN DE ARCHIVOS
 
 from google.colab import files
 
-## Crear archivo de ejemplo
+Crear archivo de ejemplo
 with open('ejemplo.txt', 'w') as f:
     f.write("Contenido de ejemplo")
 
-## Descargar archivo
+Descargar archivo
 files.download('ejemplo.txt')
 
-## 6. MONTAJE DE GOOGLE DRIVE (OPCIONAL)
+### MONTAJE DE GOOGLE DRIVE (OPCIONAL)
 
 from google.colab import drive
 drive.mount('/content/drive')
 
-## Acceder a archivos en Drive
+Acceder a archivos en Drive
 !ls "/content/drive/MyDrive"
 
 
-## 7. INSTALACIÓN DE LIBRERÍAS ADICIONALES
+### INSTALACIÓN DE LIBRERÍAS ADICIONALES
 
 !pip install nombre_libreria
 
-
-## 8. EJECUCIÓN DE SCRIPTS EXTERNOS
+### EJECUCIÓN DE SCRIPTS EXTERNOS
 
 !python "ruta/al/script.py"
 
-
-## 9. LIMPIEZA DE MEMORIA
+### LIMPIEZA DE MEMORIA
 
 import gc
 gc.collect()
@@ -89,13 +85,13 @@ print("¡Todas las operaciones básicas de Colab fueron ejecutadas!")
 # Aprendizaje supervisado
 Regresión- Variable numerica, predecir un valor numerico (Continua)
 
-from sklearn.linear_model import LinearRegression
+    from sklearn.linear_model import LinearRegression
 
-# Datos: [[kilómetros, año]], precio
+Datos: [[kilómetros, año]], precio
+````
 X = [[100000, 2010], [50000, 2015], [20000, 2020]]
 y = [5000, 15000, 25000]  # Precios en USD
 
-````
 modelo = LinearRegression()
 modelo.fit(X, y)
 prediccion = modelo.predict([[80000, 2012]])

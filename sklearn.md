@@ -1,4 +1,4 @@
-# # Dendrograma (Agrupamiento Jerárquico)
+# Dendrograma (Agrupamiento Jerárquico)
 
 Es un método de Machine Learning generalmente empleado para la organización y clasificación de datos, con el fin de detectar patrones y agrupar elementos, permitiendo así diferenciar unos de otros.
 
