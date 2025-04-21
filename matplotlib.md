@@ -1,3 +1,28 @@
+# Dendrograma (Agrupamiento Jerárquico)
+
+Es un método de Machine Learning generalmente empleado para la organización y clasificación de datos, con el fin de detectar patrones y agrupar elementos, permitiendo así diferenciar unos de otros.
+
+````
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+dataset = pd.read_csv('/content/Mall_Customers.csv')
+
+datapoints = dataset.iloc[:, [3, 4]].values
+
+import scipy.cluster.hierarchy as hc
+from sklearn.cluster import AgglomerativeClustering
+
+dend= hc.dendrogram(hc.linkage(datapoints, method = 'ward'))
+
+plt.title('Dendrograma')
+plt.xlabel('Clientes')
+plt.ylabel('Distancia Euclidiana')
+plt.show()
+
+````
+
 # Creación de gráficos
 
 ````
