@@ -1,3 +1,14 @@
+# T-SNE
+(T-distributed Stochastic Neighbor Embedding) es un algoritmo diseñado para la visualización de conjuntos de datos de alta dimensionalidad. Si el número de dimensiones es muy alto, Scikit-Learn recomienda en su documentación utilizar un método de reducción de dimensionalidad previo (como PCA) para reducir el conjunto de datos a un número de dimensiones razonable (por ejemplo 50), lo que reducirá el ruido y aligerará la ejecución de t-SNE
+-------------------------
+
+
+
+
+
+# Principal Component Regression (PCR)
+La Regresión por Componentes Principales(PCR) implica aplicar el Análisis de Componentes Principales (PCA) a los datos de entrenamiento, seguido del entrenamiento de un regresor en las muestras transformadas. 
+
 # Tratamiento de datos
 # ==============================================================================
 import numpy as np
@@ -157,3 +168,5 @@ print('---------------------')
 print('Valores reconstruidos')
 print('---------------------')
 display(datos.head())
+------------------------------------------------------------------------------------------------------------
+
