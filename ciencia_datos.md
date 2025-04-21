@@ -9,9 +9,9 @@ https://colab.research.google.com/
 
 # Google Colab - Guía Completa de Funciones Básicas
 
-# --------------------------------------------------
-# 1. MANEJO DE CELDAS
-# --------------------------------------------------
+
+## 1. MANEJO DE CELDAS
+
 """
 Colab ofrece dos tipos de celdas:
 - Code cells: Para ejecutar código Python
@@ -23,74 +23,71 @@ Atajos útiles:
 - Ejecutar celda: Shift + Enter
 """
 
-# --------------------------------------------------
-# 2. CAMBIO DE DIRECTORIO
-# --------------------------------------------------
+## 2. CAMBIO DE DIRECTORIO
+
 import os
 
-# Directorio actual
+## Directorio actual
 print(f"Directorio actual: {os.getcwd()}")
 
-# Cambiar directorio (ejemplo)
+## Cambiar directorio (ejemplo)
 nuevo_dir = "/content/sample_data"
 os.chdir(nuevo_dir)
 print(f"Nuevo directorio: {os.getcwd()}")
 
-# --------------------------------------------------
-# 3. MANEJO DE ARCHIVOS COMPRIMIDOS
-# --------------------------------------------------
-# Descomprimir archivo zip
+
+## 3. MANEJO DE ARCHIVOS COMPRIMIDOS
+
+## Descomprimir archivo zip
 !unzip "/content/archivo_comprimido.zip" -d "/content/destino"
 
-# --------------------------------------------------
-# 4. DESCARGA DE DATASETS
-# --------------------------------------------------
-# Descargar desde URL
+
+## 4. DESCARGA DE DATASETS
+
+## Descargar desde URL
 !wget "https://ejemplo.com/dataset.csv"
 
-# --------------------------------------------------
-# 5. EXPORTACIÓN DE ARCHIVOS
-# --------------------------------------------------
+
+## 5. EXPORTACIÓN DE ARCHIVOS
+
 from google.colab import files
 
-# Crear archivo de ejemplo
+## Crear archivo de ejemplo
 with open('ejemplo.txt', 'w') as f:
     f.write("Contenido de ejemplo")
 
-# Descargar archivo
+## Descargar archivo
 files.download('ejemplo.txt')
 
-# --------------------------------------------------
-# 6. MONTAJE DE GOOGLE DRIVE (OPCIONAL)
-# --------------------------------------------------
+## 6. MONTAJE DE GOOGLE DRIVE (OPCIONAL)
+
 from google.colab import drive
 drive.mount('/content/drive')
 
-# Acceder a archivos en Drive
+## Acceder a archivos en Drive
 !ls "/content/drive/MyDrive"
 
-# --------------------------------------------------
-# 7. INSTALACIÓN DE LIBRERÍAS ADICIONALES
-# --------------------------------------------------
+
+## 7. INSTALACIÓN DE LIBRERÍAS ADICIONALES
+
 !pip install nombre_libreria
 
-# --------------------------------------------------
-# 8. EJECUCIÓN DE SCRIPTS EXTERNOS
-# --------------------------------------------------
+
+## 8. EJECUCIÓN DE SCRIPTS EXTERNOS
+
 !python "ruta/al/script.py"
 
-# --------------------------------------------------
-# 9. LIMPIEZA DE MEMORIA
-# --------------------------------------------------
+
+## 9. LIMPIEZA DE MEMORIA
+
 import gc
 gc.collect()
 
 print("¡Todas las operaciones básicas de Colab fueron ejecutadas!")
-
-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
 # Aprendizaje supervisado
-## Regresión- Variable numerica, predecir un valor numerico (Continua)
+Regresión- Variable numerica, predecir un valor numerico (Continua)
 
 from sklearn.linear_model import LinearRegression
 
@@ -98,11 +95,12 @@ from sklearn.linear_model import LinearRegression
 X = [[100000, 2010], [50000, 2015], [20000, 2020]]
 y = [5000, 15000, 25000]  # Precios en USD
 
+````
 modelo = LinearRegression()
 modelo.fit(X, y)
 prediccion = modelo.predict([[80000, 2012]])
 print(prediccion)  # Ejemplo: [12000.50]
-
+````
 
 #Clasificación Etiquetas, predecir etiqueta o clase (Discretas)
 
@@ -154,7 +152,7 @@ https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV
 
 ----------------------------------------------------------------------------------------------------------------------
 
-### Otros proyectos
+# Otros proyectos
 
 ## Ataque adversario
 https://www.youtube.com/watch?v=JoQx39CoXW8&t=314s&ab_channel=DotCSV

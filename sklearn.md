@@ -4,26 +4,26 @@ Es un método de Machine Learning generalmente empleado para la organización y 
 
 ````
 # Tratamiento de datos
-# ==============================================================================
+
 import numpy as np
 import pandas as pd
 from sklearn.datasets import make_blobs
 
 # Gráficos
-# ==============================================================================
+
 import matplotlib.pyplot as plt
 from matplotlib import style
 style.use('ggplot') or plt.style.use('ggplot')
 
 # Preprocesado y modelado
-# ==============================================================================
+
 from sklearn.cluster import AgglomerativeClustering
 from scipy.cluster.hierarchy import dendrogram
 from sklearn.preprocessing import scale
 from sklearn.metrics import silhouette_score
 
 # Configuración warnings
-# ==============================================================================
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -51,7 +51,7 @@ def plot_dendrogram(model, **kwargs):
     dendrogram(linkage_matrix, **kwargs)
 
 # Simulación de datos
-# ==============================================================================
+
 X, y = make_blobs(
         n_samples    = 200, 
         n_features   = 2, 
@@ -75,7 +75,7 @@ ax.set_title('Datos simulados')
 ax.legend();
 
 # Simulación de datos
-# ==============================================================================
+
 X, y = make_blobs(
         n_samples    = 200, 
         n_features   = 2, 
@@ -99,11 +99,11 @@ ax.set_title('Datos simulados')
 ax.legend();
 
 # Escalado de datos
-# ==============================================================================
+
 X_scaled = scale(X)
 
 # Modelos
-# ==============================================================================
+
 modelo_hclust_complete = AgglomerativeClustering(
                             metric='euclidean', # Changed 'affinity' to 'metric'
                             linkage  = 'complete',
@@ -129,7 +129,7 @@ modelo_hclust_ward = AgglomerativeClustering(
 modelo_hclust_ward.fit(X=X_scaled)
 
 # Dendrogramas
-# ==============================================================================
+
 fig, axs = plt.subplots(3, 1, figsize=(8, 8))
 plot_dendrogram(modelo_hclust_average, color_threshold=0, ax=axs[0])
 axs[0].set_title("Distancia euclídea, Linkage average")
@@ -174,7 +174,8 @@ plt.plot(centroides[:,0],centroides[:,1],'mo',markersize=8, label='centroides')
 
 plt.legend(loc='best')
 plt.show()
-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
 # Escalamiento 
 Asegura que las variables tengan un impacto equilibrado en los modelos.
 
