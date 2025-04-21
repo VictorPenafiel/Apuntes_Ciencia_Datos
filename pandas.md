@@ -69,6 +69,7 @@ print(s)
 
 ## Explorando Datos.
 df.metodo() 
+
     read 
         Leer archivos csv, excel, json, sql, HTML, etc.
     head 
