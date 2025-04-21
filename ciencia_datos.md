@@ -80,6 +80,7 @@ import gc
 gc.collect()
 
 print("¡Todas las operaciones básicas de Colab fueron ejecutadas!")
+
 ------------------------------------------------------------------------------------------------------------
 
 # Aprendizaje supervisado
@@ -97,12 +98,15 @@ modelo.fit(X, y)
 prediccion = modelo.predict([[80000, 2012]])
 print(prediccion)  # Ejemplo: [12000.50]
 ````
+------------------------------------------------------------------------------------------------------
 
-#Clasificación Etiquetas, predecir etiqueta o clase (Discretas)
+# Clasificación Etiquetas, predecir etiqueta o clase (Discretas)
 
-from sklearn.ensemble import RandomForestClassifier
+    from sklearn.ensemble import RandomForestClassifier
 
 # Datos: [[núm_palabras, contiene_emoji]], etiqueta
+
+````
 X = [[50, 0], [20, 1], [100, 0]]
 y = [0, 1, 0]  # 0: No spam, 1: Spam
 
@@ -110,9 +114,11 @@ modelo = RandomForestClassifier()
 modelo.fit(X, y)
 prediccion = modelo.predict([[80, 1]])
 print(prediccion)  # Ejemplo: [1] (spam)
+````
+
 ----------------------------------------------------------------------------------------------------------------------
 
-
+# Proyectos interesantes
 El 1 es teoría, el 2 es proyecto.
 
 ## Descenso del Gradiente
@@ -146,9 +152,9 @@ https://www.youtube.com/watch?v=M5QHwkkHgAA&ab_channel=DotCSV
 2
 https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV
 
-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
-# Otros proyectos
+
 
 ## Ataque adversario
 https://www.youtube.com/watch?v=JoQx39CoXW8&t=314s&ab_channel=DotCSV
