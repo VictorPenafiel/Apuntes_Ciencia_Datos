@@ -9,10 +9,9 @@ https://colab.research.google.com/
 
 # Google Colab - Guía Completa de Funciones Básicas
 
-
+````
 ### MANEJO DE CELDAS
 
-"""
 Colab ofrece dos tipos de celdas:
 - Code cells: Para ejecutar código Python
 - Text cells: Para documentación en Markdown
@@ -21,7 +20,7 @@ Atajos útiles:
 - Añadir celda de código: Ctrl + M + B
 - Añadir celda de texto: Click en +Texto
 - Ejecutar celda: Shift + Enter
-"""
+
 
 ### CAMBIO DE DIRECTORIO
 
@@ -46,7 +45,7 @@ Descomprimir archivo zip
 Descargar desde URL
 !wget "https://ejemplo.com/dataset.csv"
 
-EXPORTACIÓN DE ARCHIVOS
+### EXPORTACIÓN DE ARCHIVOS
 
 from google.colab import files
 
@@ -80,7 +79,7 @@ import gc
 gc.collect()
 
 print("¡Todas las operaciones básicas de Colab fueron ejecutadas!")
-
+````
 ------------------------------------------------------------------------------------------------------------
 
 # Aprendizaje supervisado
@@ -153,8 +152,6 @@ https://www.youtube.com/watch?v=M5QHwkkHgAA&ab_channel=DotCSV
 https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV
 
 ------------------------------------------------------------------------------------------------------------
-
-
 
 ## Ataque adversario
 https://www.youtube.com/watch?v=JoQx39CoXW8&t=314s&ab_channel=DotCSV
