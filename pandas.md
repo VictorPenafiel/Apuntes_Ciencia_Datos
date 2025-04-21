@@ -25,7 +25,7 @@ print(df)
     matriz_from_df = df.values  # o df.to_numpy()
 
 ### Matriz a DataFrame
-  df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
+    df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
 
 
 https://pandas.pydata.org/docs/reference/api/pandas.Series.html
@@ -52,15 +52,16 @@ print(s)
 
 ------------------------------------------------------------------------------------------------------------
 
-Leer archivo .csv
+### Leer archivo .csv
 
-df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
+    df =pd.read_csv("/content/surveys.csv", encoding="ISO-8859-1", delimiter=";")
 
-Convertir archivo CSV a XLSX
-pd.read_csv('data.csv').to_excel('data.xlsx', index=False)
+### Convertir archivo CSV a XLSX
 
-Convertir archivo XLSX a CSV
-pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
+    pd.read_csv('data.csv').to_excel('data.xlsx', index=False)
+
+### Convertir archivo XLSX a CSV
+    pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -68,7 +69,6 @@ pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
 
 ## Explorando Datos.
 df.metodo() 
-```
     read 
         Leer archivos csv, excel, json, sql, HTML, etc.
     head 
@@ -79,16 +79,21 @@ df.metodo()
         Muestra el tipo de datos de las columnas, el número de valores no nulos (non-null) y la memoria utilizada por la estructura de datos.
     describe
         Devuelve estadísticas descriptivas incluyendo: media, meadiana, máx, mín, std y percentiles para una columna en particular de los datos.
-```
+
 df.metodo
+
     colums 
         Devuelve una lista con todos los nombres de las columnas de un DataFrame
     shape 
         Devuelve una tupla con el número de filas y columnas de un DataFrame
 
-```pd calculando Datos.
-df['nombre_columna'].metodo() 
 
+## calculando Datos.
+
+## 
+
+df['nombre_columna'].metodo() 
+````
     min 
         Leer los primeros 5 elementos de la estructura
     max 
