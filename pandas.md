@@ -1,3 +1,4 @@
+````
 Serie o estructura unidimensional.
 Dataframes o estructura bidimensional
 Los métodos pandas.
@@ -5,6 +6,7 @@ Los métodos pandas.
   pd.DataFrame.metodo
 
 import pandas as pd
+````
 
 ### pd.Dataframe(data, index, columns, dtype)
 
@@ -20,7 +22,7 @@ print(df)
 ````
 
 ### DataFrame a Matriz (solo funciona si todas las columnas son numéricas)
-  matriz_from_df = df.values  # o df.to_numpy()
+    matriz_from_df = df.values  # o df.to_numpy()
 
 ### Matriz a DataFrame
   df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
