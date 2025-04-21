@@ -1,17 +1,19 @@
 # TensorFlow y tf.keras
+````
 import tensorflow as tf
 from tensorflow import keras
-
+````
 # Librerias de ayuda
+````
 import numpy as np
 import matplotlib.pyplot as plt
 
 print(tf.__version__)
-
+````
 # Keras
 
 ##  base para clasificación de imágenes
-
+````
 import tensorflow as tf
 mnist = tf.keras.datasets.mnist
 
@@ -31,3 +33,4 @@ model.compile(optimizer='adam',
 
 model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
+````

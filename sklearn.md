@@ -144,6 +144,7 @@ plt.tight_layout();
 
 # K-means
 
+````
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -174,6 +175,7 @@ plt.plot(centroides[:,0],centroides[:,1],'mo',markersize=8, label='centroides')
 
 plt.legend(loc='best')
 plt.show()
+````
 ------------------------------------------------------------------------------------------------------------
 
 # Escalamiento 

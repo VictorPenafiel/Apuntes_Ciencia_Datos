@@ -8,6 +8,7 @@ import pandas as pd
 
 ### pd.Dataframe(data, index, columns, dtype)
 
+````
 data = {
     "Nombre": ["Ana", "Juan", "Luisa"],
     "Edad": [25, 30, 22],
@@ -16,13 +17,13 @@ data = {
 
 df = pd.DataFrame(data)
 print(df)
-
+````
 
 ### DataFrame a Matriz (solo funciona si todas las columnas son numéricas)
-matriz_from_df = df.values  # o df.to_numpy()
+  matriz_from_df = df.values  # o df.to_numpy()
 
 ### Matriz a DataFrame
-df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
+  df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
 
 
 https://pandas.pydata.org/docs/reference/api/pandas.Series.html
@@ -47,7 +48,7 @@ https://interactivechaos.com/es/manual/tutorial-de-numpy/las-funciones-linspace-
 s = pd.Series(np.linspace(5, 20, 100)) # linspace(starting, end, items)
 print(s)
 
-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
 
 Leer archivo .csv
 
@@ -58,7 +59,9 @@ pd.read_csv('data.csv').to_excel('data.xlsx', index=False)
 
 Convertir archivo XLSX a CSV
 pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
-----------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+
 
 
 ## Explorando Datos.
