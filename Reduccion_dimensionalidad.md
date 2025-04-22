@@ -1,3 +1,31 @@
+# PCA, t-SNE y ejemplo practico PCR
+
+# T PCA
+Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
+
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+
+````
+import numpy as np
+from sklearn.decomposition import PCA
+X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+pca = PCA(n_components=2)
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+pca = PCA(n_components=2, svd_solver='full')
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+pca = PCA(n_components=1, svd_solver='arpack')
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+print(pca.singular_values_)
+
+````
+
 # T-SNE
 (T-distributed Stochastic Neighbor Embedding) es un algoritmo diseñado para la visualización de conjuntos de datos de alta dimensionalidad. Si el número de dimensiones es muy alto, Scikit-Learn recomienda en su documentación utilizar un método de reducción de dimensionalidad previo (como PCA) para reducir el conjunto de datos a un número de dimensiones razonable (por ejemplo 50), lo que reducirá el ruido y aligerará la ejecución de t-SNE
 

@@ -94,7 +94,7 @@ df.metodo
 ## 
 
 df['nombre_columna'].metodo() 
-````
+
     min 
         Leer los primeros 5 elementos de la estructura
     max 
@@ -124,7 +124,7 @@ df['nombre_columna'].metodo()
     dtype
         Devuelve el tipo de datos de cada columna
 
-```
+
 ##  Transformación de datos
 df['nombre_columna'].metodo() 
 
