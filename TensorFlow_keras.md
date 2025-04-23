@@ -36,7 +36,7 @@ model.evaluate(x_test, y_test)
 
 ## Ejemplo_clasificacion_imagenes
 
-````
+
 # TensorFlow and tf.keras
 import tensorflow as tf
 
