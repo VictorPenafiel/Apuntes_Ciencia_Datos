@@ -38,19 +38,19 @@ model.evaluate(x_test, y_test)
 
 
 # TensorFlow and tf.keras
-import tensorflow as tf
+    import tensorflow as tf
 
 # Helper libraries
-import numpy as np
-import matplotlib.pyplot as plt
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-print(tf.__version__)
+    print(tf.__version__)
 
-fashion_mnist = tf.keras.datasets.fashion_mnist
+    fashion_mnist = tf.keras.datasets.fashion_mnist
 
-(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+    (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
-class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+    class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
 
@@ -63,7 +63,7 @@ len(test_labels)
 
 ## Preprocesar los datos
 
-plt.figure()
+    plt.figure()
 plt.imshow(train_images[0])
 plt.colorbar()
 plt.grid(False)
