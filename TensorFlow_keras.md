@@ -301,8 +301,8 @@ model.fit(train_images, train_labels, epochs=10)
     plot_value_array(i, predictions[i],  test_labels)
     plt.show()
 
-# Plot the first X test images, their predicted labels, and the true labels.
-# Color correct predictions in blue and incorrect predictions in red.
+## Plot the first X test images, their predicted labels, and the true labels.
+## Color correct predictions in blue and incorrect predictions in red.
     num_rows = 5
     num_cols = 3
     num_images = num_rows*num_cols
@@ -317,12 +317,12 @@ model.fit(train_images, train_labels, epochs=10)
 
 ## Usar modelo entrenado
 
-# Grab an image from the test dataset.
+## Grab an image from the test dataset.
     img = test_images[1]
 
     print(img.shape)
 
-# Add the image to a batch where it's the only member.
+## Add the image to a batch where it's the only member.
     img = (np.expand_dims(img,0))
 
     print(img.shape)
