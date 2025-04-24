@@ -4,7 +4,6 @@
 Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
 
 Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y dispersión de las variables.
-
 https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
 
 
@@ -49,27 +48,27 @@ X_embedded.shape
 # Principal Component Regression (PCR)
 La Regresión por Componentes Principales(PCR) implica aplicar el Análisis de Componentes Principales (PCA) a los datos de entrenamiento, seguido del entrenamiento de un regresor en las muestras transformadas. 
 
-## Tratamiento de datos
+### Tratamiento de datos
 ````
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 ````
-## Gráficos
+### Gráficos
 ````
 import matplotlib.pyplot as plt
 import matplotlib.font_manager
 from matplotlib import style
 style.use('ggplot') or plt.style.use('ggplot')
 ````
-## Preprocesado y modelado
+### Preprocesado y modelado
 ````
 from sklearn.decomposition import PCA
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import scale
 ````
-## Configuración warnings
+### Configuración warnings
 
 ````
 import warnings
@@ -93,16 +92,16 @@ print('-------------------------')
 datos.var(axis=0)
 ````
 
-## Entrenamiento modelo PCA con escalado de los datos
+### Entrenamiento modelo PCA con escalado de los datos
 ````
 pca_pipe = make_pipeline(StandardScaler(), PCA())
 pca_pipe.fit(datos)
 ````
-## Se extrae el modelo entrenado del pipeline
+### Se extrae el modelo entrenado del pipeline
 ````
 modelo_pca = pca_pipe.named_steps['pca']
 ````
-## Se combierte el array a dataframe para añadir nombres a los ejes.
+### Se combierte el array a dataframe para añadir nombres a los ejes.
 ````
 pd.DataFrame(
     data    = modelo_pca.components_,
@@ -110,7 +109,7 @@ pd.DataFrame(
     index   = ['PC1', 'PC2', 'PC3', 'PC4']
 )
 ````
-## Heatmap componentes
+### Heatmap componentes
 ````
 fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(4, 2))
 componentes = modelo_pca.components_
@@ -120,7 +119,7 @@ plt.xticks(range(len(datos.columns)), np.arange(modelo_pca.n_components_) + 1)
 plt.grid(False)
 plt.colorbar();
 ````
-## Porcentaje de varianza explicada por cada componente
+### Porcentaje de varianza explicada por cada componente
 ````
 print('----------------------------------------------------')
 print('Porcentaje de varianza explicada por cada componente')
@@ -149,7 +148,7 @@ ax.set_title('Porcentaje de varianza explicada por cada componente')
 ax.set_xlabel('Componente principal')
 ax.set_ylabel('Por. varianza explicada');
 ````
-# Porcentaje de varianza explicada acumulada
+### Porcentaje de varianza explicada acumulada
 ````
 prop_varianza_acum = modelo_pca.explained_variance_ratio_.cumsum()
 print('------------------------------------------')
@@ -180,7 +179,7 @@ ax.set_title('Porcentaje de varianza explicada acumulada')
 ax.set_xlabel('Componente principal')
 ax.set_ylabel('Por. varianza acumulada');
 ````
-# Proyección de las observaciones de entrenamiento
+### Proyección de las observaciones de entrenamiento
 ````
 proyecciones = pca_pipe.transform(X=datos)
 proyecciones = pd.DataFrame(
@@ -195,7 +194,7 @@ proyecciones = pd.DataFrame(proyecciones, index = ['PC1', 'PC2', 'PC3', 'PC4'])
 proyecciones = proyecciones.transpose().set_index(datos.index)
 proyecciones.head()
 ````
-## Recostruccion de las proyecciones
+### Recostruccion de las proyecciones
 ````
 recostruccion = pca_pipe.inverse_transform(X=proyecciones)
 recostruccion = pd.DataFrame(
