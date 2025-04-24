@@ -1,6 +1,6 @@
 # PCA, t-SNE y ejemplo practico PCR
 
-# T PCA
+## T PCA
 Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
 
 Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y dispersión de las variables.
@@ -28,7 +28,7 @@ print(pca.singular_values_)
 
 ````
 
-# T-SNE
+## T-SNE
 (T-distributed Stochastic Neighbor Embedding) es un algoritmo diseñado para la visualización de conjuntos de datos de alta dimensionalidad. Si el número de dimensiones es muy alto, Scikit-Learn recomienda en su documentación utilizar un método de reducción de dimensionalidad previo (como PCA) para reducir el conjunto de datos a un número de dimensiones razonable (por ejemplo 50), lo que reducirá el ruido y aligerará la ejecución de t-SNE
 
 https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
@@ -45,7 +45,7 @@ X_embedded.shape
 -------------------------------------------------------------------------------------------------------
 
 
-# Principal Component Regression (PCR)
+## Principal Component Regression (PCR)
 La Regresión por Componentes Principales(PCR) implica aplicar el Análisis de Componentes Principales (PCA) a los datos de entrenamiento, seguido del entrenamiento de un regresor en las muestras transformadas. 
 
 ### Tratamiento de datos
