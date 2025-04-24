@@ -1,5 +1,23 @@
 # K-means
+La agrupación (clustering) de medias K es un algoritmo de aprendizaje no supervisado utilizado para la agrupación en clústeres de datos, que agrupa puntos de datos no etiquetados en grupos o clústeres.
 
+https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans
+
+https://www.ibm.com/mx-es/think/topics/k-means-clustering
+
+--------------------------------------------------------------------------------------
+````
+from sklearn.cluster import KMeans
+import numpy as np
+X = np.array([[1, 2], [1, 4], [1, 0],
+              [10, 2], [10, 4], [10, 0]])
+kmeans = KMeans(n_clusters=2, random_state=0, n_init="auto").fit(X)
+kmeans.labels_
+kmeans.predict([[0, 0], [12, 3]])
+kmeans.cluster_centers_
+````
+
+------------------------------------------------------------------------------------
 ````
 import numpy as np
 import matplotlib.pyplot as plt
@@ -35,6 +53,7 @@ plt.show()
 ----------------------------------------------------------------------------------------------
 
 
+````
 import numpy as np
 
 from sklearn.datasets import load_digits
@@ -171,3 +190,5 @@ plt.ylim(y_min, y_max)
 plt.xticks(())
 plt.yticks(())
 plt.show()
+
+````
