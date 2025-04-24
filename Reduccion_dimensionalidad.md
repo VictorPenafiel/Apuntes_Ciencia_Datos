@@ -3,7 +3,10 @@
 # T PCA
 Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
 
+Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y dispersión de las variables.
+
 https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+
 
 ````
 import numpy as np

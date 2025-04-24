@@ -206,4 +206,6 @@ Usos: NLP, K-Means. Text mining (TF-IDF) o cuando se requiere vectores unitarios
 
     # Normalización L2 (suma de cuadrados = 1)
     l2_scaled = normalize(data, norm='l2')
-----------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+
