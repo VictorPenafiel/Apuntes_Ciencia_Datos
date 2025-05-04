@@ -2,10 +2,13 @@
 
 ## T PCA
 Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
+PCA se utiliza para descomponer un conjunto de datos multivariantes en un conjunto de componentes ortogonales sucesivos que explican una cantidad máxima de la varianza.
 
-Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y dispersión de las variables.
+Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y la dispersión de las variables.
+
 https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
 
+https://qu4nt.github.io/sklearn-doc-es/modules/decomposition.html#pca
 
 ````
 import numpy as np
@@ -36,6 +39,7 @@ https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
 ````
 import numpy as np
 from sklearn.manifold import TSNE
+
 X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1], [1, 1, 1]])
 X_embedded = TSNE(n_components=2, learning_rate='auto',
                   init='random', perplexity=3).fit_transform(X)

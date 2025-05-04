@@ -178,7 +178,7 @@ for epoch in range(EPOCHS):
 -------------------------------------------------------------------------------------------
 
 # Ejemplo_clasificacion_imagenes
-
+Predecir una imagen de moda 
 
 ## TensorFlow and tf.keras
     import tensorflow as tf
@@ -205,36 +205,45 @@ for epoch in range(EPOCHS):
     len(test_labels)
 
 ## Preprocesar los datos
-
+El set de datos debe ser pre-procesada antes de entrenar la red. Si usted inspecciona la primera imagen en el set de entrenamiento, va a encontrar que los valores de los pixeles estan entre 0 y 255:
     plt.figure()
     plt.imshow(train_images[0])
     plt.colorbar()
     plt.grid(False)
     plt.show()
 
-plt.figure(figsize=(10,10))
-for i in range(25):
-    plt.subplot(5,5,i+1)
-    plt.xticks([])
-    plt.yticks([])
-    plt.grid(False)
-    plt.imshow(train_images[i], cmap=plt.cm.binary)
-    plt.xlabel(class_names[train_labels[i]])
-plt.show()
+Escale estos valores en un rango de 0 a 1 antes de alimentarlos al modelo de la red neuronal. Para hacero, divida los valores por 255. Es importante que el training set y el testing set se pre-procesen de la misma forma:
+    train_images = train_images / 255.0
+
+    test_images = test_images / 255.0
+
+Para verificar que el set de datos esta en el formato adecuado y que estan listos para construir y entrenar la red, vamos a desplegar las primeras 25 imagenes de el training set y despleguemos el nombre de cada clase debajo de cada imagen.
+
+    plt.figure(figsize=(10,10))
+    for i in range(25):
+        plt.subplot(5,5,i+1)
+        plt.xticks([])
+        plt.yticks([])
+        plt.grid(False)
+        plt.imshow(train_images[i], cmap=plt.cm.binary)
+        plt.xlabel(class_names[train_labels[i]])
+    plt.show()
 
 ## Generar modelo
-
+Configurar las Capas
     model = tf.keras.Sequential([
         tf.keras.layers.Flatten(input_shape=(28, 28)),
         tf.keras.layers.Dense(128, activation='relu'),
         tf.keras.layers.Dense(10)
     ])
 
+Compile el modelo
     model.compile(optimizer='adam',
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=['accuracy'])
 
-model.fit(train_images, train_labels, epochs=10)
+Para comenzar a entrenar, llame el metodo model.fit, es llamado asi por que fit (ajusta) el modelo a el set de datos de entrenamiento:
+    model.fit(train_images, train_labels, epochs=10)
 
 ## Evaluar precision
 
@@ -252,6 +261,8 @@ model.fit(train_images, train_labels, epochs=10)
     np.argmax(predictions[0])
     test_labels[0]
 
+
+Grafique esto para poder ver todo el set de la prediccion de las 10 clases.
     def plot_image(i, predictions_array, true_label, img):
       true_label, img = true_label[i], img[i]
       plt.grid(False)
@@ -301,6 +312,8 @@ model.fit(train_images, train_labels, epochs=10)
     plot_value_array(i, predictions[i],  test_labels)
     plt.show()
 
+
+Vamos a graficar multiples imagenes con sus predicciones. Notese que el modelo puede estar equivocado aun cuando tiene mucha confianza.
 ## Plot the first X test images, their predicted labels, and the true labels.
 ## Color correct predictions in blue and incorrect predictions in red.
     num_rows = 5
@@ -323,8 +336,10 @@ model.fit(train_images, train_labels, epochs=10)
     print(img.shape)
 
 ## Add the image to a batch where it's the only member.
+Los modelos de tf.keras son optimizados sobre batch o bloques, o coleciones de ejemplos por vez. De acuerdo a esto, aunque use una unica imagen toca agregarla a una lista:
     img = (np.expand_dims(img,0))
 
+## Ahora prediga la etiqueta correcta para esta imagen:
     print(img.shape)
 
     predictions_single = probability_model.predict(img)

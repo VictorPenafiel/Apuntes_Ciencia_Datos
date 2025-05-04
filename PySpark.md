@@ -1,3 +1,9 @@
+ # Spark
+Computación paralela sobre grandes colecciones de datos en un contexto de procesamiento distribuido. 
+
+[API_Spark](https://spark.apache.org/docs/latest/api/python/reference/index.html)
+
+ 
  ### Instalamos la librería pyspark, Java 8 y seteamos las variables de entorno para que no devuelva error:
 
 	!pip install pyspark
@@ -29,3 +35,21 @@ https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.SparkConte
 ### Para apagar Spark, debemos llamaar al método stop () del SparkContext, en nuestro caso la variable sc:
 
     sc.stop()
+
+
+# listado de las acciones más comunes y su utilización:
+Para la columna Result se calcula con un RDD con los valores {1, 2, 3, 3}
+
+    collect 
+        Retorna todos los elementos del RDD
+    take(num)
+        Retorna num de elementos del RDD
+    count 
+        Numero de elementos del RDD
+    takeSample
+        Retorna una muestra aleatoria de elementos de un RDD
+    top(num)
+        Retorna (num) de los primeros elementos una vez ordenado el RDD
+    TakeOrdered()
+         Retorna (num) de registros necesarios pero ordenados ascendentemente(al contrario de top)
+

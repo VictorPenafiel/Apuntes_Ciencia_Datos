@@ -1,7 +1,7 @@
 # Red neuronal
 Las redes neuronales pretenden imitar aproximadamente la estructura del cerebro humano. Están compuestas de muchos nodos interconectados (o neuronas), dispuestos en capas. Las redes neuronales hacen predicciones cuando los datos de entrada originales han realizado un "paso hacia adelante" a través de toda la red.
 
-[Vizualizar_red](https://playground.tensorflow.org/#activation=tanh&batchSize=1&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=30&networkShape=4,2&seed=0.76503&showTestData=false&discretize=false&percTrainData=10&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+[Representacion_red_neuronal](https://playground.tensorflow.org/#activation=tanh&batchSize=1&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=30&networkShape=4,2&seed=0.76503&showTestData=false&discretize=false&percTrainData=10&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 ------------------------------------------------------------------------------------------------------------
 ## Regresión lineal y mínimos cuadrados ordinarios
