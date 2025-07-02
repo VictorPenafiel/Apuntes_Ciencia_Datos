@@ -1,11 +1,8 @@
-Cuadernos Jupyter
-https://jupyter.org/
-
 Gestor que te instala todo lo que puedes necesitar
-https://anaconda.org/anaconda/conda
+[Anaconda](https://anaconda.org/anaconda/conda)
+[Cuadernos Jupyter](https://jupyter.org/)
+Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación. [Colab](https://colab.research.google.com/) 
 
-Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona tarjetas gráficas de última generación.
-https://colab.research.google.com/ 
 
 # Google Colab - Guía Completa de Funciones Básicas
 
