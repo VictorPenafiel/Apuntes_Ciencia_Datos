@@ -1,9 +1,10 @@
 # K-means
 La agrupación (clustering) de medias K es un algoritmo de aprendizaje no supervisado utilizado para la agrupación en clústeres de datos, que agrupa puntos de datos no etiquetados en grupos o clústeres.
 
-https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans
+[K-means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans)
+[K-means_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/clustering.html#k-means)
 
-https://www.ibm.com/mx-es/think/topics/k-means-clustering
+[k-means-clustering](https://www.ibm.com/mx-es/think/topics/k-means-clustering)
 
 --------------------------------------------------------------------------------------
 ````
@@ -197,8 +198,8 @@ plt.show()
 
 # DBSCAN
 El algoritmo de clustering DBSCAN (Density-Based Spatial Clustering of Applications with Noise), Utiliza un enfoque de clustering espacial basado en la densidad para crear clústeres con una densidad pasada por el usuario que se centra en un centroide espacial. El área inmediatamente alrededor del centroide se denomina vecindad y DBSCAN intenta definir las vecindades de los clústeres que tienen la densidad especificada 
-
-https://qu4nt.github.io/sklearn-doc-es/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN
+[DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
+[DBSCAN_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN)
 
 ````
 import numpy as np

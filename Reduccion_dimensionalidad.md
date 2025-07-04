@@ -6,9 +6,9 @@ PCA se utiliza para descomponer un conjunto de datos multivariantes en un conjun
 
 Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y la dispersión de las variables.
 
-https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+[PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
 
-https://qu4nt.github.io/sklearn-doc-es/modules/decomposition.html#pca
+[PCA_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/decomposition.html#pca)
 
 ````
 import numpy as np
@@ -34,7 +34,7 @@ print(pca.singular_values_)
 ## T-SNE
 (T-distributed Stochastic Neighbor Embedding) es un algoritmo diseñado para la visualización de conjuntos de datos de alta dimensionalidad. Si el número de dimensiones es muy alto, Scikit-Learn recomienda en su documentación utilizar un método de reducción de dimensionalidad previo (como PCA) para reducir el conjunto de datos a un número de dimensiones razonable (por ejemplo 50), lo que reducirá el ruido y aligerará la ejecución de t-SNE
 
-https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
+[T-SNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)
 
 ````
 import numpy as np

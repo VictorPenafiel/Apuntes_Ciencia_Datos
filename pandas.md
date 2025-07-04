@@ -27,8 +27,7 @@ print(df)
 ### Matriz a DataFrame
     df_from_matriz = pd.DataFrame(matriz, columns=["A", "B", "C"])
 
-
-https://pandas.pydata.org/docs/reference/api/pandas.Series.html
+[Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html)
 
         nums = [1, 2, 3, 4, 5]
         s = pd.Series(nums, index = ['aa', 'bb', 'cc', 'dd', 'ee'])

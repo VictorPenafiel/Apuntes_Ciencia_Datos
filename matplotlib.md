@@ -44,7 +44,7 @@ plt.show()
 
 hist(x, bins): Dibuja un histograma con las frecuencias resultantes de agrupar los datos de la lista x en las clases definidas por la lista bins.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist
+[histograma](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist)
 
 ````
 import numpy as np
@@ -59,7 +59,7 @@ plt.show()
 
 boxplot(x): Dibuja un diagrama de caja y bigotes con los datos de la lista x.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot
+[caja](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot)
 
 ````
 import matplotlib.pyplot as plt
@@ -72,7 +72,7 @@ plt.show()
 
 scatter(x, y): Dibuja un diagrama de puntos con las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y. 
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter
+[puntos](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
 
 ````
 import matplotlib.pyplot as plt
@@ -85,7 +85,7 @@ plt.show()
 
 plot(x, y): Dibuja un polígono con los vértices dados por las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot
+[líneas](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot)
 
 ````
 import matplotlib.pyplot as plt
@@ -98,7 +98,7 @@ plt.show()
 
 fill_between(x, y): Dibuja el area bajo el polígono con los vértices dados por las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html#matplotlib.pyplot.fill_between
+[area](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html#matplotlib.pyplot.fill_between)
 
 ````
 import matplotlib.pyplot as plt
@@ -111,7 +111,7 @@ plt.show()
 
 bar(x, y): Dibuja un diagrama de barras verticales donde x es una lista con la posición de las barras en el eje X, e y es una lista con la altura de las barras en el eje Y.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar
+[barras_verticales](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar)
 
 ````
 import matplotlib.pyplot as plt
@@ -124,7 +124,7 @@ plt.show()
 
 barh(x, y): Dibuja un diagrama de barras horizontales donde x es una lista con la posición de las barras en el eje Y, e y es una lista con la longitud de las barras en el eje X
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh
+[barras_horizontales](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.barh.html#matplotlib.pyplot.barh)
 
 ````
 import matplotlib.pyplot as plt
@@ -137,7 +137,7 @@ plt.show()
 
 pie(x): Dibuja un diagrama de sectores con las frecuencias de la lista x. 
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html#matplotlib.pyplot.pie
+[sectores](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html#matplotlib.pyplot.pie)
 
 ````
 import matplotlib.pyplot as plt
@@ -150,7 +150,7 @@ plt.show()
 
 violinplot(x): Dibuja un diagrama de violín con los datos de la lista x.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.violinplot.html#matplotlib.pyplot.violinplot
+[violín](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.violinplot.html#matplotlib.pyplot.violinplot)
 
 ````
 import matplotlib.pyplot as plt
@@ -164,7 +164,7 @@ plt.show()
 
 contourf(x, y, z): Dibuja un diagrama de contorno con las curvas de nivel de la superficie dada por los puntos con las coordenadas de las listas x, y y z en los ejes X, Y y Z respectivamente.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf
+[contorno](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf)
 
 ````
 import matplotlib.pyplot as plt
@@ -182,7 +182,7 @@ plt.show()
 
 imshow(x): Dibuja un mapa de color a partir de una matriz (array bidimensiona) x.
 
-https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow
+[mapas_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow)
 
 ````
 import matplotlib.pyplot as plt

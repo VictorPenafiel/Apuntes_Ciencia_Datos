@@ -1,6 +1,6 @@
 # Tensor
 Un tensor es un vector o matriz de n dimensiones que representa todo tipo de datos. Todos los valores de un tensor contienen tipos de datos idénticos con una forma conocida (o parcialmente conocida). La forma de los datos es la dimensionalidad de la matriz o matriz.
-https://www.guru99.com/es/tensor-tensorflow.html
+[Tensor](https://www.guru99.com/es/tensor-tensorflow.html)
 
 
 # Keras
