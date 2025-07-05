@@ -43,7 +43,7 @@ Es una técnica de machine learning esencial para la optimización de las redes 
 Regresión- Variable numerica, predecir un valor numerico (Continua)
 
 ````
-    from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression
 
 Datos: [[kilómetros, año]], precio
 X = [[100000, 2010], [50000, 2015], [20000, 2020]]

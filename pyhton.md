@@ -1,4 +1,4 @@
-(descargar_python)[https://www.python.org/downloads/]
+[descargar_python](https://www.python.org/downloads/)
 
 Obtener versión de Pyhton
     pyhton -v
