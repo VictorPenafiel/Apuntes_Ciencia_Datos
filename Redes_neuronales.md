@@ -26,8 +26,8 @@ Es un algoritmo de aprendizaje supervisado que se utiliza para predecir el valor
 ## Descenso del Gradiente
 Algoritmo de optimización que entrena  modelos de machine learning mediante la minimización de errores entre los resultados previstos y los reales.
 
-https://www.ibm.com/es-es/think/topics/gradient-descent
-https://www.benfrederickson.com/numerical-optimization/
+[gradient-descent](https://www.ibm.com/es-es/think/topics/gradient-descent)
+[numerical-optimization](https://www.benfrederickson.com/numerical-optimization/)
 
 *Descenso del Gradiente
 [teoría](https://www.youtube.com/watch?v=A6FiCDoz8_4&t=322s&ab_channel=DotCSV)
@@ -37,7 +37,7 @@ https://www.benfrederickson.com/numerical-optimization/
 ## backpropagation (retropropagación) 
 Es una técnica de machine learning esencial para la optimización de las redes neuronales. Facilita el uso de algoritmos de descenso gradiente para actualizar las ponderaciones de la red. La lógica de la retropropagación es que las capas de neuronas de las redes neuronales artificiales son básicamente una serie de funciones matemáticas anidadas. Durante el entrenamiento, esas ecuaciones interconectadas se anidan en otra función más: una "función de pérdida" que mide la diferencia (o "pérdida") entre la salida deseada (o "verdad fundamental") para una entrada dada y la salida real de las redes neuronales.
 
-https://www.ibm.com/es-es/think/topics/backpropagation
+[backpropagation](https://www.ibm.com/es-es/think/topics/backpropagation)
 
 # Aprendizaje supervisado
 Regresión- Variable numerica, predecir un valor numerico (Continua)
