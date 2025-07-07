@@ -112,3 +112,4 @@ Muestran relaciones estadísticas con ajustes.
     FacetGrid
         Para crear grillas de gráficos
             g = sns.FacetGrid(df, col="categoría")
+

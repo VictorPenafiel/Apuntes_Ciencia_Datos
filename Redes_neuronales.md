@@ -80,3 +80,4 @@ print(prediccion)  # Ejemplo: [1] (spam)
 [Generando flores realistas con IA](https://www.youtube.com/watch?v=YsrMGcgfETY&t=4423s&ab_channel=DotCSV)
 
 [Programa el juego de la vida](https://www.youtube.com/watch?v=qPtKv9fSHZY&ab_channel=DotCSV)
+
