@@ -4,11 +4,16 @@ Las redes neuronales pretenden imitar aproximadamente la estructura del cerebro 
 [Representacion_red_neuronal](https://playground.tensorflow.org/#activation=tanh&batchSize=1&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=30&networkShape=4,2&seed=0.76503&showTestData=false&discretize=false&percTrainData=10&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
 
 *Red neuronal
-[teoría](https://www.youtube.com/watch?v=MRIv2IwFTPg&t=453s&ab_channel=DotCSV)
-[1.0](https://www.youtube.com/watch?v=uwbHOpp9xkc&ab_channel=DotCSV)
-[1.1](https://www.youtube.com/watch?v=eNIqz_noix8&ab_channel=DotCSV)
-[1.2](https://www.youtube.com/watch?v=M5QHwkkHgAA&ab_channel=DotCSV)
-[proyecto](https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV)
+
+[Red_Neuronal_teoría](https://www.youtube.com/watch?v=MRIv2IwFTPg&t=453s&ab_channel=DotCSV)
+
+[Red_Neuronal_teoría_2](https://www.youtube.com/watch?v=uwbHOpp9xkc&ab_channel=DotCSV)
+
+[Backpropagation](https://www.youtube.com/watch?v=eNIqz_noix8&ab_channel=DotCSV)
+
+[Matemáticas_Backpropagation](https://www.youtube.com/watch?v=M5QHwkkHgAA&ab_channel=DotCSV)
+
+[Programando_Red_Neuronal](https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV)
 
 
 ------------------------------------------------------------------------------------------------------------
@@ -18,7 +23,9 @@ Es un algoritmo de aprendizaje supervisado que se utiliza para predecir el valor
 [Regresion_lineal](https://www.aprendemachinelearning.com/regresion-lineal-en-espanol-con-python/)
 
 *Regresión lineal y mínimos cuadrados ordinarios
+
 [teoría](https://www.youtube.com/watch?v=k964_uNn3l0&ab_channel=DotCSV)
+
 [proyecto](https://www.youtube.com/watch?v=w2RJ1D6kz-o&t=215s&ab_channel=DotCSV)
 
 
@@ -27,9 +34,11 @@ Es un algoritmo de aprendizaje supervisado que se utiliza para predecir el valor
 Algoritmo de optimización que entrena  modelos de machine learning mediante la minimización de errores entre los resultados previstos y los reales.
 
 [gradient-descent](https://www.ibm.com/es-es/think/topics/gradient-descent)
+
 [numerical-optimization](https://www.benfrederickson.com/numerical-optimization/)
 
 *Descenso del Gradiente
+
 [teoría](https://www.youtube.com/watch?v=A6FiCDoz8_4&t=322s&ab_channel=DotCSV)
 
 [proyecto](https://www.youtube.com/watch?v=-_A_AAxqzCg&t=624s&ab_channel=DotCSV)
