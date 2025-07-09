@@ -8,6 +8,11 @@ Otra forma de ocupar los cuadernos es por medio de Google el cual te proporciona
 
 [Colab](https://colab.research.google.com/) 
 
+### Obtener bases de datos
+[Kaggle](https://www.kaggle.com/datasets)
+[TensorFlow](https://www.tensorflow.org/datasets?hl=es)
+[Hugging Face](https://huggingface.co/datasets)
+[UC_Irvine](https://archive.ics.uci.edu/datasets)
 
 # Google Colab - Guía Completa de Funciones Básicas
 
