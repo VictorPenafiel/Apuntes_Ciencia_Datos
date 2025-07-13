@@ -27,46 +27,68 @@ plt.show()
 
 # Creación de gráficos
 
-````
-### Importar el módulo pyplot con el alias plt
-import matplotlib.pyplot as plt
-### Crear la figura y los ejes
-fig, ax = plt.subplots()
-## Dibujar puntos
-ax.scatter(x = [1, 2, 3], y = [3, 2, 1])
-## Guardar el gráfico en formato png
-plt.savefig('diagrama-dispersion.png')
-## Mostrar el gráfico
-plt.show()
-````
+    import matplotlib.pyplot as plt
+    fig, ax = plt.subplots()
+    ax.scatter(x = [7, 2, 5], y = [6, 1, 6])
+    plt.savefig('diagrama.png')
+    plt.show()
 
 ----------------------------------------------------------------------------------------------------------------------
 
 ## Histogramas
 
-hist(x, bins): Dibuja un histograma con las frecuencias resultantes de agrupar los datos de la lista x en las clases definidas por la lista bins.
+hist(x, bins): Genera un histograma donde x representa el conjunto de datos a analizar y bins define los límites de los intervalos (clases) para agrupar los datos y calcular sus frecuencias.
 
 [histograma](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist)
 
 ````
-import numpy as np
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-x = np.random.normal(5, 1.5, size=1000)
-ax.hist(x, np.arange(0, 11))
+N_points = 100000
+n_bins = 20
+
+# Generate two normal distributions
+dist1 = rng.standard_normal(N_points)
+dist2 = 0.4 * rng.standard_normal(N_points) + 5
+
+fig, axs = plt.subplots(1, 2, sharey=True, tight_layout=True)
+
+# We can set the number of bins with the *bins* keyword argument.
+axs[0].hist(dist1, bins=n_bins)
+axs[1].hist(dist2, bins=n_bins)
+
 plt.show()
+
 ````
 
 ## Diagramas de caja y bigotes (boxplot)
 
-boxplot(x): Dibuja un diagrama de caja y bigotes con los datos de la lista x.
+boxplot(x): Genera un diagrama de caja y bigotes (boxplot), una visualización clave para resumir la distribución de un conjunto de datos numéricos en x. Este diagrama muestra la mediana, los cuartiles (Q1 y Q3), el rango intercuartílico (IQR) y la presencia de valores atípicos (outliers).
 
 [caja](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot)
 
 ````
 import matplotlib.pyplot as plt
+import numpy as np
+
+np.random.seed(19680801)
+fruit_weights = [
+    np.random.normal(130, 10, size=100),
+    np.random.normal(125, 20, size=100),
+    np.random.normal(120, 30, size=100),
+]
+labels = ['peaches', 'oranges', 'tomatoes']
+colors = ['peachpuff', 'orange', 'tomato']
+
 fig, ax = plt.subplots()
-ax.boxplot([1, 2, 1, 2, 3, 4, 3, 3, 5, 7])
+ax.set_ylabel('fruit weight (g)')
+
+bplot = ax.boxplot(fruit_weights,
+                   patch_artist=True,  # fill with color
+                   tick_labels=labels)  # will be used to label x-ticks
+
+# fill with colors
+for patch, color in zip(bplot['boxes'], colors):
+    patch.set_facecolor(color)
+
 plt.show()
 ````
 
@@ -77,23 +99,35 @@ scatter(x, y): Dibuja un diagrama de puntos con las coordenadas de la lista x en
 [puntos](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter)
 
 ````
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-ax.scatter([1, 2, 3, 4], [1, 2, 0, 0.5])
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16], 'ro')
+plt.axis((0, 6, 0, 20))
 plt.show()
 ````
 
 ## Diagramas de líneas
 
-plot(x, y): Dibuja un polígono con los vértices dados por las coordenadas de la lista x en el eje X y las coordenadas de la lista y en el eje Y.
+plot(x, y): Traza una serie de líneas conectando puntos definidos por las coordenadas (x[i], y[i]). Es la función fundamental para crear gráficos de líneas, polígonos o series temporales, donde x representa las coordenadas en el eje horizontal y y las correspondientes en el eje vertical.
 
 [líneas](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot)
 
 ````
 import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.arange(0.0, 2.0, 0.01)
+s = np.sin(2 * np.pi * t)
+
+upper = 0.77
+lower = -0.77
+
+supper = np.ma.masked_where(s < upper, s)
+slower = np.ma.masked_where(s > lower, s)
+smiddle = np.ma.masked_where((s < lower) | (s > upper), s)
+
 fig, ax = plt.subplots()
-ax.plot([1, 2, 3, 4], [1, 2, 0, 0.5])
+ax.plot(t, smiddle, t, slower, t, supper)
 plt.show()
+
 ````
 
 ## Diagramas de areas
@@ -116,10 +150,13 @@ bar(x, y): Dibuja un diagrama de barras verticales donde x es una lista con la p
 [barras_verticales](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar)
 
 ````
-import matplotlib.pyplot as plt
+fruit_names = ['Coffee', 'Salted Caramel', 'Pistachio']
+fruit_counts = [4000, 2000, 7000]
+
 fig, ax = plt.subplots()
-ax.bar([1, 2, 3], [3, 2, 1])
-plt.show()
+bar_container = ax.bar(fruit_names, fruit_counts)
+ax.set(ylabel='pints sold', title='Gelato sales by flavor', ylim=(0, 8000))
+ax.bar_label(bar_container, fmt='{:,.0f}')
 ````
 
 ## Diagramas de barras horizontales
@@ -182,15 +219,30 @@ plt.show()
 ## Mapas de color
 
 
-imshow(x): Dibuja un mapa de color a partir de una matriz (array bidimensiona) x.
+imshow(x): función que asigna un valor numérico a un color específico dentro de un rango. Son esenciales para visualizar datos de alta dimensión, especialmente cuando una de las dimensiones representa una magnitud o densidad.
 
 [mapas_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow)
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-x = np.random.random((16, 16))
-ax.imshow(x)
+import numpy as np
+
+
+def func3(x, y):
+    return (1 - x / 2 + x**5 + y**3) * np.exp(-(x**2 + y**2))
+dx, dy = 0.05, 0.05
+x = np.arange(-3.0, 3.0, dx)
+y = np.arange(-3.0, 3.0, dy)
+X, Y = np.meshgrid(x, y)
+extent = np.min(x), np.max(x), np.min(y), np.max(y)
+fig = plt.figure(frameon=False)
+Z1 = np.add.outer(range(8), range(8)) % 2  # chessboard
+im1 = plt.imshow(Z1, cmap=plt.cm.gray, interpolation='nearest',
+                 extent=extent)
+Z2 = func3(X, Y)
+im2 = plt.imshow(Z2, cmap=plt.cm.viridis, alpha=.9, interpolation='bilinear',
+                 extent=extent)
+
 plt.show()
 ````
 
@@ -205,12 +257,35 @@ ax.set_title(titulo, loc=alineacion, fontdict=fuente) : Añade un título con el
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'])
-ax.plot(dias, temperaturas['Barcelona'])
-ax.set_title('Evolución de la temperatura diaria', loc = "left", fontdict = {'fontsize':14, 'fontweight':'bold', 'color':'tab:blue'})
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Viña del Mar': [15.0, 17.5, 18.0, 17.2, 19.0, 16.5, 15.8],  # Temperaturas para Viña del Mar
+    'La Serena': [18.0, 20.0, 21.5, 20.8, 22.0, 19.5, 18.2]    # Temperaturas para La Serena
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Ajustamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Viña del Mar'],
+        label='Viña del Mar',     # Etiqueta para la leyenda
+        color='tab:purple',       # Color de línea personalizado
+        marker='o',               # Marcador circular en cada punto
+        linewidth=2)              # Grosor de la línea
+ax.plot(dias, temperaturas_chile['La Serena'],
+        label='La Serena',        # Etiqueta para la leyenda
+        color='tab:green',        # Color de línea personalizado
+        marker='s',               # Marcador cuadrado en cada punto
+        linestyle='--',           # Línea discontinua para diferenciar
+        linewidth=2)              # Grosor de la línea
+ax.set_title('Evolución de la Temperatura Diaria',
+             loc='left', # Ubicación del título a la izquierda
+             fontdict={'fontsize': 16, 'fontweight': 'bold', 'color': 'darkblue'}) # Ajustado el fontsize y color para visibilidad
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.set_ylim([14, 23])
+ax.set_yticks(range(14, 24, 1)) # Ticks cada 1 grado para mayor detalle
+ax.legend(loc='upper left', title='Ciudad', fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 plt.show()
 ````
 
@@ -220,12 +295,33 @@ ax.grid(axis=ejes, color=color, linestyle=estilo) : Dibuja una rejilla en los ej
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'])
-ax.plot(dias, temperaturas['Barcelona'])
-ax.grid(axis = 'y', color = 'gray', linestyle = 'dashed')
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Puerto Montt': [9.0, 11.5, 12.0, 10.8, 13.0, 10.0, 8.5], # Temperaturas para Puerto Montt
+    'Castro': [8.0, 10.5, 11.0, 9.8, 12.0, 9.0, 7.5]        # Temperaturas para Castro
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Ajustamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Puerto Montt'],
+        label='Puerto Montt',     # Etiqueta para la leyenda
+        color='tab:blue',         # Color de la línea
+        marker='o',               # Marcador circular en cada punto
+        linewidth=2)              # Grosor de la línea
+ax.plot(dias, temperaturas_chile['Castro'],
+        label='Castro',           # Etiqueta para la leyenda
+        color='tab:green',        # Color de la línea
+        marker='s',               # Marcador cuadrado en cada punto
+        linestyle='--',           # Línea discontinua para diferenciar
+        linewidth=2)              # Grosor de la línea
+ax.set_title('Temperaturas Semanales: Puerto Montt vs Castro', fontsize=16, fontweight='bold')
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.set_ylim([5, 15])
+ax.set_yticks(range(5, 16, 1)) # Ticks cada 1 grado para mayor detalle en este rango
+ax.legend(loc='upper right', title='Ciudad', fontsize=10)
+ax.grid(axis='y', color='gray', linestyle='dashed', alpha=0.7) # Añadí alpha para suavizar
+plt.tight_layout()
 plt.show()
 ````
 
@@ -234,12 +330,33 @@ Para cambiar el color de los objetos se utiliza el parámetro color = nombre-col
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'], color = 'tab:purple')
-ax.plot(dias, temperaturas['Barcelona'], color = 'tab:green')
-plt.show()
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Osorno': [12.0, 14.5, 15.0, 13.8, 16.0, 13.0, 11.5],   # Temperaturas para Osorno
+    'Temuco': [10.5, 13.0, 14.0, 12.5, 15.0, 11.8, 10.0]    # Temperaturas para Temuco
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Aumentamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Osorno'],
+        label='Osorno',           # Etiqueta para la leyenda
+        color='tab:purple',       # Color de línea personalizado
+        marker='o',               # Marcador circular en cada punto
+        linewidth=2)              # Grosor de la línea
+ax.plot(dias, temperaturas_chile['Temuco'],
+        label='Temuco',           # Etiqueta para la leyenda
+        color='tab:green',        # Color de línea personalizado
+        marker='s',               # Marcador cuadrado en cada punto
+        linestyle='--',           # Línea discontinua para diferenciar
+        linewidth=2)              # Grosor de la línea
+ax.set_title('Temperaturas Semanales: Osorno vs Temuco', fontsize=16, fontweight='bold')
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.set_ylim([8, 18])
+ax.set_yticks(range(8, 19, 2)) # Ticks cada 2 grados
+ax.legend(loc='upper right', title='Ciudad', fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 ````
 
 ## Marcadores
@@ -248,11 +365,37 @@ Para cambiar la forma de los puntos marcadores se utiliza el parámetro marker =
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'], marker = '^')
-ax.plot(dias, temperaturas['Barcelona'], marker = 'o')
+
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+# Nuevos datos de temperatura para ciudades chilenas (ejemplo)
+# Consideremos las temperaturas en Punta Arenas (sur) y Arica (norte).
+temperaturas_chile = {
+    'Punta Arenas': [6.0, 8.5, 9.0, 7.8, 10.0, 7.0, 5.5],   # Temperaturas para Punta Arenas
+    'Arica': [22.0, 24.5, 25.0, 23.8, 26.0, 21.5, 20.9]     # Temperaturas para Arica
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Ajustamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Punta Arenas'],
+        label='Punta Arenas',     # Etiqueta para la leyenda
+        color='tab:blue',         # Color de la línea
+        marker='^',               # Marcador de triángulo hacia arriba (como solicitaste)
+        linestyle='-',            # Línea sólida
+        linewidth=2)              # Grosor de la línea
+ax.plot(dias, temperaturas_chile['Arica'],
+        label='Arica',            # Etiqueta para la leyenda
+        color='tab:red',          # Color de la línea
+        marker='o',               # Marcador circular (como solicitaste)
+        linestyle='--',           # Línea discontinua para diferenciar
+        linewidth=2)              # Grosor de la línea
+ax.set_title('Temperaturas Semanales: Punta Arenas vs Arica', fontsize=16, fontweight='bold')
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.set_ylim([0, 30])
+ax.set_yticks(range(0, 31, 5)) # Ticks cada 5 grados
+ax.legend(loc='upper left', title='Ciudad', fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 plt.show()
 ````
 
@@ -262,11 +405,34 @@ Para cambiar el estilo de las líneas se utiliza el parámetro linestyle = nombr
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'], linestyle = 'dashed')
-ax.plot(dias, temperaturas['Barcelona'], linestyle = 'dotted')
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Pucón': [14.0, 16.5, 17.0, 15.8, 18.0, 15.0, 13.5],   # Temperaturas para Pucón
+    'Valparaíso': [16.5, 18.0, 19.2, 18.8, 20.1, 17.5, 16.0] # Temperaturas para Valparaíso
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Ajustamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Pucón'],
+        label='Pucón',          # Etiqueta para la leyenda
+        color='tab:blue',       # Color de la línea
+        linestyle='--',         # Línea discontinua (dashed)
+        marker='o',             # Marcador circular en cada punto
+        linewidth=2)            # Grosor de la línea
+ax.plot(dias, temperaturas_chile['Valparaíso'],
+        label='Valparaíso',     # Etiqueta para la leyenda
+        color='tab:orange',     # Color de la línea
+        linestyle=':',          # Línea punteada (dotted)
+        marker='s',             # Marcador cuadrado en cada punto
+        linewidth=2)            # Grosor de la línea
+ax.set_title('Temperaturas Semanales: Pucón vs Valparaíso', fontsize=16, fontweight='bold')
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.legend(loc='upper right', title='Ciudad', fontsize=10)
+ax.set_ylim([10, 25])
+ax.set_yticks(range(10, 26, 2))
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 plt.show()
 ````
 
@@ -285,15 +451,34 @@ Para cambiar el aspecto de los ejes se suelen utilizar los siguientes métodos:
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'])
-ax.plot(dias, temperaturas['Barcelona'])
-ax.set_xlabel("Días", fontdict = {'fontsize':14, 'fontweight':'bold', 'color':'tab:blue'})
-ax.set_ylabel("Temperatura ºC")
-ax.set_ylim([20,35])
-ax.set_yticks(range(20, 35))
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Pucón': [14.0, 16.5, 17.0, 15.8, 18.0, 15.0, 13.5],   # Temperaturas para Pucón
+    'Santiago': [20.5, 23.0, 24.5, 22.8, 25.0, 21.0, 19.5] # Temperaturas para Santiago
+}
+
+fig, ax = plt.subplots(figsize=(10, 6)) # Aumentamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Pucón'],
+        label='Pucón',          # Etiqueta para la leyenda
+        color='tab:blue',       # Color de la línea
+        marker='o',             # Marcador en cada punto
+        linewidth=2)            # Grosor de la línea
+ax.plot(dias, temperaturas_chile['Santiago'],
+        label='Santiago',       # Etiqueta para la leyenda
+        color='tab:red',        # Color de la línea
+        marker='s',             # Marcador diferente
+        linestyle='--',         # Estilo de línea diferente
+        linewidth=2)            # Grosor de la línea
+ax.set_xlabel("Días", fontdict={'fontsize': 14, 'fontweight': 'bold', 'color': 'darkgreen'})
+ax.set_ylabel("Temperatura ºC", fontsize=12)
+ax.set_ylim([10, 30]) # Rango ajustado para Pucón y Santiago
+ax.set_yticks(range(10, 31, 2)) # Ticks cada 2 grados dentro del nuevo rango
+ax.set_title('Temperaturas Semanales: Pucón vs Santiago', fontsize=16, fontweight='bold')
+ax.legend(loc='upper left', title='Ciudad', fontsize=10) # Leyenda arriba a la izquierda
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 plt.show()
 ````
 
@@ -305,12 +490,33 @@ Para añadir una leyenda a un gráfico se utiliza el siguiente método:
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax.plot(dias, temperaturas['Madrid'], label = 'Madrid')
-ax.plot(dias, temperaturas['Barcelona'], label = 'Barcelona')
-ax.legend(loc = 'upper right')
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+
+temperaturas_chile = {
+    'Concepción': [13.0, 15.5, 16.0, 14.8, 17.0, 14.2, 12.5], # Temperaturas para Concepción
+    'La Serena': [18.5, 20.0, 21.5, 20.8, 22.0, 19.5, 18.0]   # Temperaturas para La Serena
+}
+fig, ax = plt.subplots(figsize=(10, 6)) # Aumentamos el tamaño para mejor legibilidad
+ax.plot(dias, temperaturas_chile['Concepción'],
+        label='Concepción',       # Etiqueta para la leyenda
+        marker='o',               # Marcador circular en cada punto
+        linestyle='-',            # Línea sólida
+        color='tab:blue',         # Color azul
+        linewidth=2)              # Ancho de la línea
+ax.plot(dias, temperaturas_chile['La Serena'],
+        label='La Serena',        # Etiqueta para la leyenda
+        marker='s',               # Marcador cuadrado en cada punto
+        linestyle='--',           # Línea discontinua
+        color='tab:red',          # Color rojo
+        linewidth=2)              # Ancho de la línea
+ax.set_title('Temperaturas Semanales: Concepción vs La Serena', fontsize=16, fontweight='bold')
+# Añadir etiquetas a los ejes
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.legend(loc='upper right', title='Ciudad', fontsize=10)
+ax.grid(True, linestyle='--', alpha=0.7)
+plt.tight_layout()
 plt.show()
 ````
 
@@ -320,13 +526,29 @@ Es posible dibujar varios gráficos en distintos ejes en una misma figura organi
 
 ````
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots(2, 2, sharey = True)
-dias = ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-temperaturas = {'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]}
-ax[0, 0].plot(dias, temperaturas['Madrid'])
-ax[0, 1].plot(dias, temperaturas['Barcelona'], color = 'tab:orange')
-ax[1, 0].bar(dias, temperaturas['Madrid'])
-ax[1, 1].bar(dias, temperaturas['Barcelona'], color = 'tab:orange')
+
+fig, ax = plt.subplots(2, 2, sharey=True, figsize=(10, 8)) # Ajustado figsize para mejor visibilidad
+
+
+dias = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom']
+temperaturas_chile = {
+    'Pucón': [15.2, 17.5, 18.0, 16.5, 19.0, 16.0, 14.8], # Temperaturas para Pucón
+    'Santiago': [22.1, 24.5, 25.0, 23.8, 26.0, 21.5, 20.9] # Temperaturas para Santiago
+}
+ax[0, 0].plot(dias, temperaturas_chile['Pucón'], marker='o', linestyle='-', color='tab:blue')
+ax[0, 0].set_title('Temperaturas Semanales en Pucón', fontsize=12)
+ax[0, 0].set_ylabel('Temperatura (°C)', fontsize=10) # Etiqueta del eje Y
+ax[0, 1].plot(dias, temperaturas_chile['Santiago'], marker='o', linestyle='-', color='tab:red')
+ax[0, 1].set_title('Temperaturas Semanales en Santiago', fontsize=12)
+ax[1, 0].bar(dias, temperaturas_chile['Pucón'], color='skyblue')
+ax[1, 0].set_title('Temperaturas Semanales en Pucón', fontsize=12)
+ax[1, 0].set_xlabel('Día de la Semana', fontsize=10) # Etiqueta del eje X
+ax[1, 0].set_ylabel('Temperatura (°C)', fontsize=10) # Etiqueta del eje Y
+ax[1, 1].bar(dias, temperaturas_chile['Santiago'], color='lightcoral')
+ax[1, 1].set_title('Temperaturas Semanales en Santiago', fontsize=12)
+ax[1, 1].set_xlabel('Día de la Semana', fontsize=10) # Etiqueta del eje X
+plt.tight_layout()
+plt.suptitle('Comparación de Temperaturas Semanales (Pucón vs Santiago)', fontsize=16, fontweight='bold', y=1.02) # Título general
 plt.show()
 ````
 
@@ -337,28 +559,28 @@ Matplotlib se integra a la perfección con la librería Pandas, permitiendo dibu
     df.plot(kind=tipo, x=columnax, y=columnay, ax=ejes) : Dibuja un diagrama del tipo indicado por el parámetro kind en los ejes indicados en el parámetro ax, representando en el eje x la columna del parámetro x y en el eje y la columna del parámetro y. El parámetro kind puede tomar como argumentos 'line' (lineas), 'scatter' (puntos), 'bar' (barras verticales), 'barh' (barras horizontales), 'hist' (histograma), 'box' (cajas), 'density' (densidad), 'area' (area) o 'pie' (sectores). Es posible pasar otros parámetros para indicar el color, el marcador o el estilo de línea como se vió en los apartados anteriores.
 
 ````
-import pandas as pd 
+import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.DataFrame({'Días':['L', 'M', 'X', 'J', 'V', 'S', 'D'], 
-                   'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 
-                   'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]})
-fig, ax = plt.subplots()
-df.plot(x = 'Días', y = 'Madrid', ax = ax)
-df.plot(x = 'Días', y = 'Barcelona', ax = ax)
-plt.show()
-````
 
-Si no se indican los parámetros x e y se representa el índice de las filas en el eje x y una serie por cada columna del Dataframe. Las columnas no numéricas se ignoran.
+data_temperaturas_chile = {
+    'Días': ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+    'Valparaíso': [16.5, 18.0, 19.2, 18.8, 20.1, 17.5, 16.0], # Temperaturas para Valparaíso
+    'Concepción': [12.0, 14.5, 15.0, 13.8, 16.0, 13.0, 11.5]  # Temperaturas para Concepción
+}
 
-````
-import pandas as pd 
-import matplotlib.pyplot as plt
-df = pd.DataFrame({'Días':['L', 'M', 'X', 'J', 'V', 'S', 'D'], 
-                   'Madrid':[28.5, 30.5, 31, 30, 28, 27.5, 30.5], 
-                   'Barcelona':[24.5, 25.5, 26.5, 25, 26.5, 24.5, 25]})
-df = df.set_index('Días')
-fig, ax = plt.subplots()
-df.plot(ax = ax)
+df = pd.DataFrame(data_temperaturas_chile)
+
+fig, ax = plt.subplots(figsize=(10, 6)) # Ajuste del tamaño para una mejor visualización
+df.plot(x='Días', y='Valparaíso', ax=ax, label='Valparaíso',
+        marker='o', linestyle='-', color='tab:blue', linewidth=2)
+df.plot(x='Días', y='Concepción', ax=ax, label='Concepción',
+        marker='s', linestyle='--', color='tab:green', linewidth=2)
+ax.set_title('Temperaturas Semanales: Valparaíso vs Concepción', fontsize=16, fontweight='bold')
+ax.set_xlabel('Día de la Semana', fontsize=12)
+ax.set_ylabel('Temperatura (°C)', fontsize=12)
+ax.grid(True, linestyle='--', alpha=0.6) # Añadir una cuadrícula para mejor lectura
+ax.legend(title='Ciudad', fontsize=10) # Mostrar leyenda para identificar las líneas
+plt.tight_layout()
 plt.show()
 ````
 

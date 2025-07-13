@@ -95,3 +95,13 @@ Acceder a archivos en Drive
     print("¡Todas las operaciones básicas de Colab fueron ejecutadas!")
 
 ------------------------------------------------------------------------------------------------------------
+
+# Sitios de interes
+
+[numpy](https://numpy.org/es/)
+[pandas](https://pandas.pydata.org/)
+[matplotlib](https://matplotlib.org/)
+[seaborn](https://seaborn.pydata.org/)
+[tensorflow](https://www.tensorflow.org/?hl=es)
+[keras](https://keras.io/)
+[scikit-learn](https://scikit-learn.org/stable/)
