@@ -64,6 +64,14 @@ print(s)
 ### Convertir archivo XLSX a CSV
     pd.read_excel('data.xlsx').to_csv('data.csv', index=False)
 
+Los métodos pandas.read_csv(), pandas.read_excel(), pandas.read_sql(), pandas.read_json(), pandas.read_html(), y pandas.read_clipboard() son tus herramientas esenciales para importar datos en un DataFrame
+
+### Otros métodos
+
+Además de poder partir de otras estructura además de las vistas (de un diccionario de tuplas, por ejemplo), hay dos constructores adicionales:
+* `pandas.DataFrame.from_dict`, que crea un dataframe a partir de un diccionario de diccionarios o de secuencias tipo array, y
+* `pandas.DataFrame.from_records`, que parte de una lista de tuplas o de arrays NumPy con un tipo estructurado.
+
 ------------------------------------------------------------------------------------------------------------
 
 
