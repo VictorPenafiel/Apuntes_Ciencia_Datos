@@ -1,3 +1,9 @@
+# Machine learning
+El machine learning es una rama de la inteligencia artificial (IA) centrada en entrenar a computadoras y máquinas para imitar el modo en que aprenden los humanos, realizar tareas de forma autónoma y mejorar su rendimiento y precisión a través de la experiencia y la exposición a más datos.
+
+## Etiqueta (label o target) 
+    Valor de salida o la variable objetivo que un modelo de aprendizaje supervisado está tratando de predecir. 
+
 # Red neuronal
 Las redes neuronales pretenden imitar aproximadamente la estructura del cerebro humano. Están compuestas de muchos nodos interconectados (o neuronas), dispuestos en capas. Las redes neuronales hacen predicciones cuando los datos de entrada originales han realizado un "paso hacia adelante" a través de toda la red.
 
@@ -27,8 +33,6 @@ Es un algoritmo de aprendizaje supervisado que se utiliza para predecir el valor
 [teoría](https://www.youtube.com/watch?v=k964_uNn3l0&ab_channel=DotCSV)
 
 [proyecto](https://www.youtube.com/watch?v=w2RJ1D6kz-o&t=215s&ab_channel=DotCSV)
-
-
 
 ## Descenso del Gradiente
 Algoritmo de optimización que entrena  modelos de machine learning mediante la minimización de errores entre los resultados previstos y los reales.

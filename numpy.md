@@ -27,7 +27,7 @@
         Crea una matriz identidad cuadrada, donde la diagonal principal está compuesta por unos y el resto son ceros.
 
 `reshape`
-        Redimensionamiento de matrices
+        Redimensionamiento de matrices, sin cambiar datos
 
 `concatenate()`
         Se utiliza para unir arrays a lo largo de un eje existente.

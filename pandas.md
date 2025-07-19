@@ -125,6 +125,8 @@ df['nombre_columna'].metodo()
     * Recorre una serie o columna y cuenta cuántos valores diferentes hay
 * **isnull**
     * Identificar valores nulos (faltantes) en un DataFrame o Series
+* **duplicated**
+    * Se utiliza para identificar filas duplicadas en un DataFrame
 * **dropna()**
     * Elimina las filas que contienen datos nulos.
 * **mean (Media)**
@@ -141,6 +143,12 @@ df['nombre_columna'].metodo()
     * Devuelve el número de valores no nulos (no vacíos) en un DataFrame o una Serie.
 * **dtype**
     * Devuelve el tipo de datos de cada columna
+* **get_dummies**
+    * Se utiliza para convertir variables categóricas en variables ficticias (o variables dummy)
+* **groupby**
+    * Permite agrupar datos en un DataFrame basándose en los valores de una o más columnas. 
+* **value_counts**
+    * Se utiliza para contar la frecuencia de cada valor único dentro de una columna de un DataFrame o una Serie. 
 
 
 ##  Transformación de datos
@@ -152,7 +160,7 @@ df['nombre_columna'].metodo()
 * **melt**
     * Convierte columnas en filas, reuniendo la información.
 * **pivot**
-    * `pivot_df = reservas.pivot_table(columns='Noches', values='Total Ganancias', aggfunc='sum')` # or other appropriate aggregation function like 'mean', 'first' etc.
+    * `pivot_df = reservas.pivot_table(columns='Noches', values='Total Ganancias', aggfunc='sum')` 
     * Nos permite reorganizar y transformar los datos de un DataFrame creando una nueva tabla con un formato diferente.
 * **concat(\[df1, df2])**
     * Apila dos datasets (juntando por filas) y los convierte en uno. Ambos datasets deben tener las mismas columnas.
@@ -160,7 +168,7 @@ df['nombre_columna'].metodo()
     * Junta dos datasets anexando columnas. Ambos datasets deben tener las mismas filas.
 * **sort\_values**
     * Ordena las filas del dataset en base a los valores de la "variable" (por defecto de menor a mayor).
-    
+
         `df.sort_values("variable", ascending=False)`
     * Ordena las filas del dataset en base a los valores de la "variable" (por defecto de mayor a menor).
         
