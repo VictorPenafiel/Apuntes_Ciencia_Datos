@@ -1,14 +1,12 @@
-### 1\. **IE01\_Conceptos\_Básicos-Parte1.ipynb**
-
-Este notebook introduce los fundamentos de la inferencia estadística, diferenciándola de la estadística descriptiva.
+### Conceptos\_Básicos
 
   * **Conceptos Clave**:
 
       * **Estadística**: Disciplina para procesar y organizar datos.
       * **Población**: Conjunto total de elementos con una característica común.
       * **Muestra**: Subconjunto representativo de una población.
-      * **Parámetro**: Medida numérica que describe una característica de la **población** (e.g., media poblacional μ).
-      * **Estadístico**: Medida numérica que describe una característica de la **muestra** (e.g., media muestral x̄).
+      * **Parámetro**: Función numérica que describe una característica de la **población** (e.g., media poblacional μ).
+      * **Estadístico**:Función numérica que describe una característica de la **muestra** (e.g., media muestral x̄).
       * **Sesgo (Bias)**: Errores sistemáticos en la medición o muestreo que no se deben al azar.
 
   * **Técnicas de Muestreo Aleatorio**:
@@ -19,17 +17,31 @@ Este notebook introduce los fundamentos de la inferencia estadística, diferenci
       * **Muestreo de Varias Etapas**: Combinación de las técnicas anteriores.
 
   * **Teoría de Probabilidad**:
+    La probabilidad es la posibilidad a largo plazo de que se produzca un determinado resultado de algún proceso aleatorio.
 
-      * Introduce los conceptos de **espacio muestral**, **evento** y la **Regla de Laplace** para calcular probabilidades en experimentos con resultados equiprobables.
+    **Espacio muestral**:
+    El conjunto de todos los posibles resultados del experimento. Se denota con la letra $\Omega$
+
+    $$\Omega = \{1, 2, 3, 4, 5, 6\}
+    $$
+
+    **evento**:
+    Cualquier subconjunto del espacio muestral. Se denota con cualquier letra mayúscula. Ejemplo: sea $A$: lanzar el dado y obtener un número par
+    $$
+    A = \{2, 4, 6\}
+    $$
+    
+      
+    **Regla de Laplace** para calcular probabilidades en experimentos con resultados equiprobables.
       * `P(A) = Casos Favorables / Casos Totales`
 
 -----
 
-### 2\. **IE02\_Distribuciones\_de\_probabilidades-2.ipynb**
+### Distribuciones\_de\_probabilidades**
 
-Este notebook profundiza en las variables aleatorias y sus distribuciones de probabilidad.
 
   * **Variables Aleatorias**:
+    Función que asigna un valor numérico, al resultado de un experimento aleatorio.
 
       * **Discretas**: Toman un número contable de valores (e.g., número de caras en un lanzamiento de moneda).
       * **Continuas**: Toman un número incontable de valores en un rango (e.g., la altura de una persona).
@@ -42,9 +54,8 @@ Este notebook profundiza en las variables aleatorias y sus distribuciones de pro
 
 -----
 
-### 3\. **IE03\_Graficando\_distribuciones\_de\_probabilidades.ipynb**
+### Graficando\_distribuciones\_de\_probabilidades**
 
-Aquí se explica cómo visualizar las distribuciones de probabilidad utilizando Python.
 
   * **Visualizaciones Clave**:
 
@@ -66,9 +77,8 @@ Aquí se explica cómo visualizar las distribuciones de probabilidad utilizando 
 
 -----
 
-### 4\. **IE04\_Distribuciones\_discretas.ipynb**
+### Distribuciones\_discretas**
 
-Este notebook se centra en las distribuciones de probabilidad para variables aleatorias discretas.
 
   * **Distribuciones Notables**:
       * **Uniforme Discreta**: Todos los resultados tienen la misma probabilidad (e.g., lanzar un dado).
@@ -78,9 +88,7 @@ Este notebook se centra en las distribuciones de probabilidad para variables ale
 
 -----
 
-### 5\. **IE05\_Distribuciones\_continuas.ipynb**
-
-Se presentan las distribuciones de probabilidad para variables aleatorias continuas.
+### Distribuciones\_continuas**
 
   * **Distribuciones Notables**:
       * **Uniforme Continua**: La probabilidad es constante sobre un intervalo (a, b).
@@ -90,9 +98,8 @@ Se presentan las distribuciones de probabilidad para variables aleatorias contin
 
 -----
 
-### 6\. **IE06\_Conceptos\_Básicos-Parte2.ipynb**
+### Conceptos\_Básicos-Parte2.**
 
-Este notebook introduce dos de los teoremas más importantes de la estadística.
 
   * **Ley de los Grandes Números**:
 
@@ -106,9 +113,7 @@ Este notebook introduce dos de los teoremas más importantes de la estadística.
 
 -----
 
-### 7\. **IE07\_Caso\_Practico\_de\_TLC-Simulacion\_Montecarlo.ipynb**
-
-Se aplica el Teorema del Límite Central en un caso práctico utilizando simulación de Montecarlo.
+### Caso\_Practico\_de\_TLC-Simulacion\_Montecarlo**
 
   * **Simulación de Montecarlo**:
 
@@ -124,9 +129,7 @@ Se aplica el Teorema del Límite Central en un caso práctico utilizando simulac
 
 -----
 
-### 8\. **IE08\_Intervalos\_de\_Confianza.ipynb**
-
-Este notebook explica cómo construir e interpretar intervalos de confianza, una herramienta clave de la inferencia.
+### Intervalos\_de\_Confianza**
 
   * **Intervalo de Confianza (IC)**:
 
@@ -146,9 +149,8 @@ Este notebook explica cómo construir e interpretar intervalos de confianza, una
 
 -----
 
-### 9\. **Pruebas\_Hipotesis\_1y2\_Muestras-2.ipynb**
+### **Pruebas\_Hipotesis**
 
-Introduce el concepto y procedimiento de las pruebas de hipótesis.
 
   * **Prueba de Hipótesis**:
 
