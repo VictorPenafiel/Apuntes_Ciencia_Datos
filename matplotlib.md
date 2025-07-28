@@ -1,3 +1,8 @@
+Utilizando el gestor de paquetes de Python (pip)
+```bash
+pip install matplotlib
+```
+
 [matplotlib](https://matplotlib.org/)
 
 # Dendrograma (Agrupamiento Jerárquico)

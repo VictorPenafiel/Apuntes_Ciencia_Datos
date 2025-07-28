@@ -214,7 +214,6 @@ El set de datos debe ser pre-procesada antes de entrenar la red. Si usted inspec
 
 Escale estos valores en un rango de 0 a 1 antes de alimentarlos al modelo de la red neuronal. Para hacero, divida los valores por 255. Es importante que el training set y el testing set se pre-procesen de la misma forma:
     train_images = train_images / 255.0
-
     test_images = test_images / 255.0
 
 Para verificar que el set de datos esta en el formato adecuado y que estan listos para construir y entrenar la red, vamos a desplegar las primeras 25 imagenes de el training set y despleguemos el nombre de cada clase debajo de cada imagen.
@@ -248,14 +247,12 @@ Para comenzar a entrenar, llame el metodo model.fit, es llamado asi por que fit 
 ## Evaluar precision
 
     test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
-
     print('\nTest accuracy:', test_acc)
 
 ## Hacer predicciones
 
     probability_model = tf.keras.Sequential([model, 
                                             tf.keras.layers.Softmax()])
-
     predictions = probability_model.predict(test_images)
     predictions[0]
     np.argmax(predictions[0])
@@ -270,7 +267,7 @@ Grafique esto para poder ver todo el set de la prediccion de las 10 clases.
       plt.yticks([])
 
       plt.imshow(img, cmap=plt.cm.binary)
-
+      
       predicted_label = np.argmax(predictions_array)
       if predicted_label == true_label:
         color = 'blue'

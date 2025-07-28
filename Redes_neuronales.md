@@ -26,6 +26,8 @@ Las redes neuronales pretenden imitar aproximadamente la estructura del cerebro 
 ## Regresión lineal y mínimos cuadrados ordinarios
 Es un algoritmo de aprendizaje supervisado que se utiliza para predecir el valor de una variable dependiente basada en el valor de una o más variables independientes
 
+y = ax = b
+
 [Regresion_lineal](https://www.aprendemachinelearning.com/regresion-lineal-en-espanol-con-python/)
 
 *Regresión lineal y mínimos cuadrados ordinarios

@@ -33,10 +33,16 @@
         Se utiliza para unir arrays a lo largo de un eje existente.
 
 `unique`
-    Valores unicos de un array
+        Valores unicos de un array
+
+`dot`
+        Se utiliza para calcular el producto escalar de dos arrays
 
 `matmul`
         Multiplicación de matrices
+
+`sin`
+        Calcula el seno trigonométrico de uno o varios ángulos. La principal característica, y la más importante a recordar, es que opera elemento por elemento sobre los arrays de NumPy.
 
 `nan`
         Not a Number(No es un número). Es un valor flotante especial en NumPy para indicar datos perdidos o indefinidos
@@ -55,13 +61,16 @@
 ### ndarray.metodo()
 
 `ndim` 
-        entrega el número de ejes, o dimensiones, de la matriz.
+        Entrega el número de ejes, o dimensiones, de la matriz.
 
 `size` 
-        entrega el número total de elementos de la matriz.
+        Entrega el número total de elementos de la matriz.
 
 `shape` 
-        entrega una tupla de números enteros que indican el número de elementos almacenados a lo largo de cada dimensión de la matriz. Si, por ejemplo, tiene una matriz 2D con 2 filas y 3 columnas, la forma de su matriz es (2, 3).
+        Entrega una tupla de números enteros que indican el número de elementos almacenados a lo largo de cada dimensión de la matriz. Si, por ejemplo, tiene una matriz 2D con 2 filas y 3 columnas, la forma de su matriz es (2, 3).
+
+`newaxis`
+        Se utiliza para aumentar la dimensionalidad de un array existente insertando un nuevo eje
 
 ---
 
@@ -81,3 +90,18 @@
 
 `random.randint(a, b)`
         Genera un número entero aleatorio dentro de un rango especificado, incluyendo ambos extremos (tanto a como b).
+
+`random.RandomState`
+        Es una clase que proporciona un generador de números pseudoaleatorios
+
+¡Excelente pregunta! Parece que te refieres a numpy.random.permutation. Como programador experto, puedo decirte que esta es una función muy útil dentro del módulo numpy.random para trabajar con aleatoriedad y reordenamiento de datos.
+
+`random.permutation(x)`
+
+Dos comportamientos principales dependiendo del tipo de argumento x que le pases:
+
+    Si x es un entero (int):
+
+        numpy.random.permutation(n) generará un array ndarray con los números enteros desde 0 hasta n-1 (es decir, np.arange(n)) y luego permutará aleatoriamente esos números.
+
+        Es útil para obtener un orden aleatorio de índices, por ejemplo, para seleccionar filas aleatorias en un dataset.
