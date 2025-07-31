@@ -19,6 +19,9 @@
   * **Teoría de Probabilidad**:
     La probabilidad es la posibilidad a largo plazo de que se produzca un determinado resultado de algún proceso aleatorio.
 
+    [Una_historia](https://www.bbc.com/mundo/articles/cr7240y4v9jo)
+    [¿Que es el caos?](https://www.youtube.com/watch?v=EOvLhZPevm0)
+
     **Espacio muestral**:
     El conjunto de todos los posibles resultados del experimento. Se denota con la letra $\Omega$
 
@@ -38,7 +41,6 @@
 -----
 
 ### Distribuciones\_de\_probabilidades**
-
 
   * **Variables Aleatorias**:
     Función que asigna un valor numérico, al resultado de un experimento aleatorio.
@@ -78,7 +80,6 @@
 -----
 
 ### Distribuciones\_discretas**
-
 
   * **Distribuciones Notables**:
       * **Uniforme Discreta**: Todos los resultados tienen la misma probabilidad (e.g., lanzar un dado).
