@@ -205,8 +205,7 @@ plt.show()
 
 ## Diagramas de contorno
 
-
-contourf(x, y, z)
+contourf([X, Y,] Z, /, [levels], **kwargs)
 
 [contorno](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.contourf.html#matplotlib.pyplot.contourf)
 
@@ -222,8 +221,6 @@ plt.show()
 ````
 
 ## Mapas de color
-
-
 imshow(x)
 
 [mapas_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow)
@@ -231,7 +228,6 @@ imshow(x)
 ````
 import matplotlib.pyplot as plt
 import numpy as np
-
 
 def func3(x, y):
     return (1 - x / 2 + x**5 + y**3) * np.exp(-(x**2 + y**2))
@@ -250,7 +246,15 @@ im2 = plt.imshow(Z2, cmap=plt.cm.viridis, alpha=.9, interpolation='bilinear',
 
 plt.show()
 ````
+### mapas de calor (heatmap)
 
+z = contingency.values # Obtenemos una representación matricial de la matriz de contingencia
+heatmap = plt.pcolormesh(z) # Generamos el mapa de calor y guardamos el artista en la variable heatmap
+
+#### añadir una barra de color
+
+heatmap = plt.pcolormesh(z) #Generamos el heatmap
+cbar = plt.colorbar(heatmap) # Añadimos la barra de color
 ----------------------------------------------------------------------------------------------------------------------
 
 # Cambiar el aspecto de los gráficos
@@ -442,7 +446,6 @@ plt.show()
 ````
 
 ## Ejes
-
 
 ````
 import matplotlib.pyplot as plt

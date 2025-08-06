@@ -6,6 +6,9 @@
 ## Configurar el tema
     sns.set_theme()
 
+## Configura el estilo de los gráficos de Seaborn, ajustando el contexto, el estilo del fondo y la paleta de colores.
+  sns.set(context='notebook', style='darkgrid', palette='dark'): 
+
 ## Cargar datos de ejemplo
     tips = sns.load_dataset("tips")
 
@@ -60,7 +63,6 @@ Muestran relaciones entre variables numéricas.
 Visualizan distribuciones de datos.
 
   * **histplot**
-
     Histograma.
       * ```python
           sns.histplot(x="edad", data=df, bins=20)
@@ -93,6 +95,9 @@ Comparan variables categóricas vs. numéricas.
       * ```python
           sns.barplot(x="categoría", y="valor", data=df)
         ```
+  * **heatmap(data)**
+      Crea un mapa de calor.
+
   * **boxplot**
 
     Diagrama de cajas (percentiles).

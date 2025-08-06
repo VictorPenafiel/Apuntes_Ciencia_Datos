@@ -17,6 +17,10 @@
         * **Escalado de Características**: Se aplica `StandardScaler` para estandarizar las características numéricas (media 0, desviación estándar 1), un requisito para muchos algoritmos como SVM y Regresión Logística.
         * **Optimización de Hiperparámetros**: Se implementa `GridSearchCV`, una técnica de búsqueda exhaustiva combinada con validación cruzada (`cross-validation`) para encontrar la mejor combinación de hiperparámetros para un modelo de forma automatizada y robusta.
 
+[Modelos para entender una realidad caótica](https://www.youtube.com/watch?v=Sb8XVheowVQ&t=306shttps://www.youtube.com/watch?v=Sb8XVheowVQ&t=306s)
+
+[Principales Algoritmos usados en Machine Learning](https://www.aprendemachinelearning.com/principales-algoritmos-usados-en-machine-learning/)
+
 #### Modelos de Regresión
 
 * **Objetivo**: Profundizar en el modelo de regresión más fundamental.
@@ -40,6 +44,8 @@
     * **Implementación**: Se utiliza `GaussianNB`, una variante que asume que la probabilidad de las características para cada clase sigue una distribución gaussiana. Es extremadamente rápido y funciona bien como un buen modelo de referencia inicial.
 
 * **k-Nearest Neighbors (k-NN)**:
+[¿Qué es el algoritmo de k vecinos más cercanos (KNN)? ](https://www.ibm.com/mx-es/think/topics/knn)
+
     * **Concepto**: Es un algoritmo "perezoso" o basado en instancias. No "aprende" un modelo, sino que memoriza todo el conjunto de entrenamiento.
     * **Funcionamiento**: Para clasificar un nuevo punto, encuentra los `k` puntos más cercanos (vecinos) en los datos de entrenamiento y asigna la clase que es más común entre esos vecinos. La elección de `k` es crucial.
 
