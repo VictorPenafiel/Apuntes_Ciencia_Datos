@@ -2,7 +2,7 @@
 
 ## T PCA
 Principal Component Analysis (PCA) es un método estadístico que permite simplificar la complejidad de espacios muestrales con muchas dimensiones a la vez que conserva su información.
-PCA se utiliza para descomponer un conjunto de datos multivariantes en un conjunto de componentes ortogonales sucesivos que explican una cantidad máxima de la varianza.
+PCA se utiliza para descomponer un conjunto de datos multivariantes en un conjunto de componentes ortogonales sucesivos que explican una cantidad máxima de la varianza, obtener los autovectores y autovalores, y transformar los datos a un nuevo espacio de componentes principales.
 
 Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y la dispersión de las variables.
 

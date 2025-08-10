@@ -1,5 +1,9 @@
+DBSCAN vs. K-Means: Se destaca que, a diferencia de K-Means, DBSCAN no requiere que se especifique el número de clusters y es capaz de manejar clusters de formas no esféricas y con ruido.
+
 # K-means
-La agrupación (clustering) de medias K es un algoritmo de aprendizaje no supervisado utilizado para la agrupación en clústeres de datos, que agrupa puntos de datos no etiquetados en grupos o clústeres.
+La agrupación (clustering) de medias K es un algoritmo de aprendizaje no supervisado utilizado para la agrupación en clústeres de datos, que agrupa puntos de datos no etiquetados en grupos o clústeres , donde cada punto pertenece al cluster con el centroide (media) más cercano.
+
+Evaluación de los Clusters: Se aplican métricas para evaluar la calidad de los clusters, como el coeficiente de silueta, la homogeneidad y la completitud.
 
 [K-means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans)
 [K-means_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/clustering.html#k-means)
@@ -196,7 +200,17 @@ plt.show()
 --------------------------------------------------------------------------------------------
 
 # DBSCAN
-El algoritmo de clustering DBSCAN (Density-Based Spatial Clustering of Applications with Noise), Utiliza un enfoque de clustering espacial basado en la densidad para crear clústeres con una densidad pasada por el usuario que se centra en un centroide espacial. El área inmediatamente alrededor del centroide se denomina vecindad y DBSCAN intenta definir las vecindades de los clústeres que tienen la densidad especificada 
+El algoritmo de clustering DBSCAN (Density-Based Spatial Clustering of Applications with Noise), Utiliza un enfoque de clustering espacial basado en la densidad para crear clústeres con una densidad pasada por el usuario que se centra en un centroide espacial. El área inmediatamente alrededor del centroide se denomina vecindad y DBSCAN intenta definir las vecindades de los clústeres que tienen la densidad especificada.
+
+El concepto en el que se basa DBSCAN es el de **core points**, o puntos base, que son muestras situadas en áreas de alta densidad. Junto a éstas encontramos también las **border points**, o puntos de borde, que se encuentran próximas a un core point (sin ser una de ellas). Por este motivo, un cluster va a ser una agrupación de core points y de border points situadas a una distancia máxima de alguna core point (distancia medida según algún criterio).
+
+### Parámetros
+
+* **Eps**: máxima distancia entre dos muestras para poder ser consideradas pertenecientes al mismo "vecindario", y
+* **MinPts**, número de muestras en un vecindario para que un punto pueda ser considerado core point.
+
+Elección de eps: Se puede utilizar para encontrar un valor óptimo para el hiperparámetro eps un gráfico de k-distance.
+
 [DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
 [DBSCAN_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN)
 
@@ -268,3 +282,33 @@ plt.show()
 
 ````
 
+---
+
+
+## <font color='blue'>**Clustering Jerárquico (Hierarchical clustering)**</font>🌳
+
+El clustering jerárquico es una alternativa a los métodos de partitioning clustering que no requiere que se pre-especifique el número de clusters. 
+
+* Aglomerativo (de abajo hacia arriba)
+
+* Divisivo ((de arriba hacia abajo))
+
+En ambos casos, los resultados pueden representarse de forma muy intuitiva en una estructura de árbol llamada dendrograma.
+
+
+
+ 
+
+    Métodos de Enlace (Linkage): Para medir la distancia entre clusters, como "complete", "average" y "ward".
+
+* **Complete or Maximum**: se calcula la distancia entre todos los posibles pares formados por una observación del cluster A y una del cluster B. La mayor de todas ellas se selecciona como la distancia entre los dos clusters. Se trata de la medida más conservadora (*maximal intercluster dissimilarity*).
+
+* **Single or Minimum**: se calcula la distancia entre todos los posibles pares formados por una observación del cluster A y una del cluster B. La menor de todas ellas se selecciona como la distancia entre los dos clusters. Se trata de la medida menos conservadora (*minimal intercluster dissimilarity*).
+
+* **Average**: Se calcula la distancia entre todos los posibles pares formados por una observación del cluster A y una del cluster B. El valor promedio de todas ellas se selecciona como la distancia entre los dos clusters (*mean intercluster dissimilarity*).
+
+* **Centroid**: Se calcula el centroide de cada uno de los clusters y se selecciona la distancia entre ellos como la distancia entre los dos clusters.
+
+* **Ward**: Se trata de un método general. La selección del par de clusters que se combinan en cada paso del agglomerative hierarchical clustering se basa en el valor óptimo de una función objetivo, pudiendo ser esta última cualquier función definida por el analista. El método Ward's minimum variance es un caso particular en el que el objetivo es minimizar la suma total de varianza intra-cluster. En cada paso, se identifican aquellos 2 clusters cuya fusión conlleva menor incremento de la varianza total intra-cluster. Esta es la misma métrica que se minimiza en K-means.
+
+Dendrogramas: Se puede visualizar los resultados del clustering jerárquico a través de dendrogramas y se pueden interpretar para decidir el número de clusters.
