@@ -1,5 +1,6 @@
 # Machine learning
 El machine learning es una rama de la inteligencia artificial (IA) centrada en entrenar a computadoras y máquinas para imitar el modo en que aprenden los humanos, realizar tareas de forma autónoma y mejorar su rendimiento y precisión a través de la experiencia y la exposición a más datos.
+
 [¿Qué es el Machine Learning?¿Y Deep Learning? ](https://www.youtube.com/watch?v=KytW151dpqU&list=PL-Ogd76BhmcC_E2RjgIIJZd1DQdYHcVf0)
 
 ## Etiqueta (label o target) 
@@ -22,6 +23,7 @@ Las redes neuronales pretenden imitar aproximadamente la estructura del cerebro 
 
 [Programando_Red_Neuronal](https://www.youtube.com/watch?v=W8AeOXa_FqU&ab_channel=DotCSV)
 
+[Funciones de activación](https://developers.google.com/machine-learning/crash-course/neural-networks/activation-functions?hl=es-419)
 
 ------------------------------------------------------------------------------------------------------------
 ## Regresión lineal y mínimos cuadrados ordinarios
@@ -52,8 +54,21 @@ Algoritmo de optimización que entrena  modelos de machine learning mediante la 
 
 ## backpropagation (retropropagación) 
 Es una técnica de machine learning esencial para la optimización de las redes neuronales. Facilita el uso de algoritmos de descenso gradiente para actualizar las ponderaciones de la red. La lógica de la retropropagación es que las capas de neuronas de las redes neuronales artificiales son básicamente una serie de funciones matemáticas anidadas. Durante el entrenamiento, esas ecuaciones interconectadas se anidan en otra función más: una "función de pérdida" que mide la diferencia (o "pérdida") entre la salida deseada (o "verdad fundamental") para una entrada dada y la salida real de las redes neuronales.
+Se actualizan los pesos y el bias.
 
 [backpropagation](https://www.ibm.com/es-es/think/topics/backpropagation)
+
+[¿Qué es la tasa de aprendizaje(learning rate) en el machine learning?](https://www.ibm.com/es-es/think/topics/learning-rate)
+
+Época(epoch): Controla la duración total del entrenamiento.
+
+Tamaño del Lote(batch size): Determina la frecuencia de las actualizaciones de los pesos.
+
+Tasa de Aprendizaje(learning rate): Define la magnitud del aprendizaje en cada actualización.
+
+Verbose: Se refiere al nivel de detalle que un algoritmo o un proceso de entrenamiento imprime en la consola.
+
+verbose=0: El algoritmo se ejecuta sin imprimir nada en la consola, a excepción de posibles errores o advertencias críticas. Es útil cuando el código está en producción y no necesitas monitorear cada paso.
 
 # Aprendizaje supervisado
 Regresión- Variable numerica, predecir un valor numerico (Continua)

@@ -99,7 +99,8 @@
 
 -----
 
-### Conceptos\_Básicos-Parte2.**
+### Conceptos\_Básicos-Parte2.
+**
 
 
   * **Ley de los Grandes Números**:

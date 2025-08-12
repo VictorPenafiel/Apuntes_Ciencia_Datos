@@ -1,8 +1,12 @@
+[Overfitting y Underfitting](https://www.youtube.com/watch?v=7-6X3DTt3R8)
+[
+Cómo identificar el OVERFITTING en tu RED NEURONAL](https://www.youtube.com/watch?v=ZmLKqZYlYUI)
+
+
 Selección de Características 🎯
 
 ---
 
-### **Resumen Detallado del Notebook: `UL05-Feature_selection.ipynb`**
 
 La **Selección de Características** (`Feature Selection`), un proceso crucial en el aprendizaje automático para mejorar el rendimiento de los modelos, reducir el sobreajuste (`overfitting`) y disminuir el tiempo de entrenamiento.
 ---

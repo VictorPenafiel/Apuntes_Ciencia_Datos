@@ -1,4 +1,4 @@
-
+[Qué es el Aprendizaje Supervisado y No Supervisado](https://www.youtube.com/watch?v=oT3arRRB2Cw&t=3s)
 ---
 
 #### Fundamentos y Flujo de Trabajo
