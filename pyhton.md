@@ -587,3 +587,4 @@ Ejemplo:
     finally:
         if 'archivo' in locals():
             archivo.close()
+
