@@ -56,3 +56,26 @@ Estos métodos realizan la selección de características **como parte del propi
     4.  Finalmente, se compara la precisión (`accuracy`) de un modelo Random Forest entrenado con todas las características frente a uno entrenado solo con las características seleccionadas por `SelectFromModel`. El notebook demuestra que **se puede lograr un rendimiento casi idéntico utilizando un subconjunto más pequeño de características**, lo que valida la eficacia del método.
 
 ---
+
+# Transfer Learning
+
+## ¿Qué es? 🧠
+El Aprendizaje por Transferencia es una técnica de Machine Learning que consiste en reutilizar un modelo pre-entrenado en una tarea origen como punto de partida para una segunda tarea objetivo.
+
+En Deep Learning, esto es especialmente poderoso porque las primeras capas de una red neuronal convolucional (CNN) tienden a aprender características muy generales y reutilizables (bordes, texturas, colores), mientras que las capas más profundas aprenden características más específicas de la tarea original (ojos, ruedas de coche, etc.). Aprovechamos esas capas iniciales ya entrenadas, lo que nos da una ventaja considerable.
+
+
+## Beneficios Principales 🏆
+* **Ahorro de Tiempo y Recursos:** Reduce drásticamente el tiempo de entrenamiento y la necesidad de potentes GPUs.
+* **Mejor Rendimiento con Pocos Datos:** Es la solución ideal cuando no dispones de un dataset masivo para obtener alta precisión con un dataset pequeño.
+* **Acceso a Arquitecturas de Vanguardia:** Te permite utilizar arquitecturas de red extremadamente potentes y probadas (como ResNet, InceptionV3, EfficientNet), diseñadas por equipos de investigación de primer nivel, sin tener que implementarlas desde cero.
+
+## Técnicas Comunes 🛠️
+1.  **Extracción de Características (Feature Extraction):**
+    * **Qué hace:** Se "congela" el modelo base y solo se entrena un nuevo clasificador final.
+    * **Cuándo usarlo:** Ideal para datasets pequeños. Es la aproximación más rápida y segura.
+
+2.  **Ajuste Fino (Fine-Tuning):**
+    * **Qué hace:** Se re-entrena una pequeña parte de las capas finales del modelo base junto con el nuevo clasificador, usando una tasa de aprendizaje muy baja.
+    * **Cuándo usarlo:** Ideal para datasets más grandes para "especializar" aún más el modelo a tus datos.
+
