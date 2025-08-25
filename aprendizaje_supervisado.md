@@ -68,3 +68,4 @@
     * **El Trade-Off**: El núcleo del aprendizaje automático. Aumentar la complejidad de un modelo generalmente reduce el sesgo pero aumenta la varianza. El objetivo es encontrar el punto óptimo de complejidad que minimice el error total.
 
 ---
+

@@ -189,3 +189,4 @@ print(f"\nSuma de probabilidades de la primera muestra: {torch.sum(probabilidade
 ```
 
 -----
+

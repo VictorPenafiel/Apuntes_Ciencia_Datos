@@ -103,3 +103,4 @@ df['Ciudad_Normalizada'] = df['Ciudad'].apply(lambda x: normalizar_texto(x, cate
 print("DataFrame con la Columna Normalizada:")
 df
 ```
+

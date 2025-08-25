@@ -172,3 +172,4 @@
       * **Prueba Z**: Para la media, cuando σ poblacional es conocida o `n` es grande.
       * **Prueba T**: Para la media, cuando σ poblacional es desconocida y `n` es pequeña.
       * **Pruebas para proporciones** y para **comparar dos muestras**.
+

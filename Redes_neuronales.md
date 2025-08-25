@@ -184,3 +184,4 @@ print(prediccion)  # Ejemplo: [1] (spam)
 
 [Programa el juego de la vida](https://www.youtube.com/watch?v=qPtKv9fSHZY&ab_channel=DotCSV)
 
+

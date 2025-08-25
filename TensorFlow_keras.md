@@ -350,3 +350,4 @@ Los modelos de tf.keras son optimizados sobre batch o bloques, o coleciones de e
     np.argmax(predictions_single[0])
 
 ````
+

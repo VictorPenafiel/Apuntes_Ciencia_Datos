@@ -588,3 +588,4 @@ Ejemplo:
         if 'archivo' in locals():
             archivo.close()
 
+

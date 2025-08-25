@@ -79,3 +79,4 @@ En Deep Learning, esto es especialmente poderoso porque las primeras capas de un
     * **Qué hace:** Se re-entrena una pequeña parte de las capas finales del modelo base junto con el nuevo clasificador, usando una tasa de aprendizaje muy baja.
     * **Cuándo usarlo:** Ideal para datasets más grandes para "especializar" aún más el modelo a tus datos.
 
+

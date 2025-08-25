@@ -23,7 +23,7 @@ El pensamiento general y orientado a los detalles.
 
 Las fases del proceso de análisis de datos son preguntar, preparar, procesar, analizar, compartir y actuar.
 
-Proceso de análisis de datos:
+### Proceso de análisis de datos:
 
     Pregunte a
 
@@ -45,7 +45,7 @@ Entre ellas se incluyen las hojas de cálculo, las bases de datos, los lenguajes
 
 ---
 
-El ciclo de vida de los datos es:
+### El ciclo de vida de los datos es:
 
     Planificar: Decidir qué tipo de datos se necesitan, cómo se gestionarán y quién será responsable de ellos.
 
@@ -60,7 +60,7 @@ El ciclo de vida de los datos es:
     Destruir: Sacar los datos del almacén y eliminar cualquier copia compartida de los mismos.
 
 
-Escuela de Negocios de Harvard (HBS)
+### Escuela de Negocios de Harvard (HBS)
 
 Ciclo de vida de los datos basado en la investigación de la Universidad de Harvard consta de ocho etapas:
 
@@ -83,7 +83,7 @@ Ciclo de vida de los datos basado en la investigación de la Universidad de Harv
 
 ---
 
-Ciclo de vida de analisis de datos
+### Ciclo de vida de analisis de datos
 
 
     Formular preguntas y definir el problema.

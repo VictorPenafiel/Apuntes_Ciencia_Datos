@@ -74,8 +74,6 @@ Además de poder partir de otras estructura además de las vistas (de un diccion
 
 ------------------------------------------------------------------------------------------------------------
 
-
-
 ## Explorando Datos.
 
 ### df.metodo()
@@ -92,9 +90,7 @@ Además de poder partir de otras estructura además de las vistas (de un diccion
   * **describe**
       * Devuelve estadísticas descriptivas incluyendo: media, mediana, máx, mín, std y percentiles para una columna en particular de los datos.
 
-
 -----
-
 
 ### df.metodo
 ### Atributos de Instancia
@@ -105,9 +101,7 @@ Además de poder partir de otras estructura además de las vistas (de un diccion
       * Devuelve una tupla con el número de filas y columnas de un DataFrame
 
 
-
 ## Calculando Datos.
-
 
 df['nombre_columna'].metodo() 
 
@@ -150,10 +144,8 @@ df['nombre_columna'].metodo()
 * **value_counts**
     * Se utiliza para contar la frecuencia de cada valor único dentro de una columna de un DataFrame o una Serie. 
 
-
 ##  Transformación de datos
 df['nombre_columna'].metodo() 
-
 
 ### Métodos de Transformación y Reorganización de Datos
 
