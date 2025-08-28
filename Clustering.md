@@ -5,6 +5,13 @@ La agrupación (clustering) de medias K es un algoritmo de aprendizaje no superv
 
 Evaluación de los Clusters: Se aplican métricas para evaluar la calidad de los clusters, como el coeficiente de silueta, la homogeneidad y la completitud.
 
+## <font color='blue'>**Algoritmo**</font>
+
+1. Seleccionar de forma aleatoria $k$ centroides $C = \{c_1, c_2, \dots, c_k\}$ de los puntos de datos $X = \{x_1, x_2, \dots, x_n\} \in \mathbb{R}^D $.
+2. Para cada observación $x_i$, se calcula la suma de errores al cuadrado de esa observación respecto a cada uno de los $k$ centroides, $ D(x_i, c_j) = \displaystyle\sum_{i=1}^{n}{\| x_i - c_j \|^2}$.
+3. A cada observación se le asigna el centroide que menos error tenga.
+4. Calcular la diferencia entre el antiguo y el nuevo centroide y repetir los pasos 2 y 3 si la diferencia es menor que un umbral (convergente).
+
 [K-means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans)
 [K-means_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/clustering.html#k-means)
 
@@ -210,6 +217,18 @@ El concepto en el que se basa DBSCAN es el de **core points**, o puntos base, qu
 * **MinPts**, número de muestras en un vecindario para que un punto pueda ser considerado core point.
 
 Elección de eps: Se puede utilizar para encontrar un valor óptimo para el hiperparámetro eps un gráfico de k-distance.
+
+## <font color='blue'>**Algoritmo**</font>
+
+1. Elegir aleatoriamente un punto $p$.
+2. Identificar todos los puntos alcanzables por densidad desde $p$ con respecto a $Eps$ y $MinPts$.
+3. Si $p$ es un core point, un cluster es formado.
+4. Si $p$ es un border point, ningún punto es de densidad alcanzable desde $p$, luego continuar con un siguiente punto.
+5. Repetir el proceso hasta que se hayan procesado todos los puntos.
+
+Una buena forma de entender el algoritmo es visualizar el proceso. En el siguiente link podrán ver una visualización del funcionamiento de DBSCAN para distintos conjuntos de datos:
+
+[visualización](https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/)
 
 [DBSCAN](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
 [DBSCAN_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN)

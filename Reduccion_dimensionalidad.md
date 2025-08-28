@@ -6,6 +6,18 @@ PCA se utiliza para descomponer un conjunto de datos multivariantes en un conjun
 
 Los dos principales aspectos a tener en cuenta cuando se quiere realizar un PCA es identificar el valor promedio y la dispersión de las variables.
 
+## ¿Por qué utilizar PCA?
+- Reducir la dimensionalidad para visualizar datos en 2D o 3D.
+- Eliminar el ruido y redundancias en los datos.
+- Mejorar el rendimiento de algoritmos de machine learning.
+
+## ¿Cómo funciona PCA?
+1. Centrado de los datos (restar la media).
+2. Calcular la matriz de covarianza.
+3. Calcular los vectores y valores propios (autovectores y autovalores).
+4. Ordenar los componentes principales por su varianza.
+5. Transformar los datos originales a este nuevo espacio.
+
 [PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
 
 [PCA_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/decomposition.html#pca)
