@@ -8,6 +8,7 @@
 
 Una **Red Neuronal Convolucional (CNN o ConvNet)** es un tipo especializado de red neuronal diseñada para procesar datos que tienen una estructura de rejilla, como las imágenes. A diferencia de las redes neuronales tradicionales (MLP), que tratan a los datos de entrada como un vector plano, las CNNs asumen explícitamente que las entradas son imágenes, lo que les permite identificar patrones espaciales.
 
+#### caja negra
 La intuición es similar a cómo los humanos reconocemos objetos: no vemos un rostro como un conjunto de píxeles, sino que identificamos características como ojos, nariz y boca. A su vez, estas características están compuestas por patrones más simples como líneas, curvas y texturas. Las CNNs emulan este proceso a través de sus capas, aprendiendo jerarquías de características cada vez más complejas.
 
 ### Componentes Clave de una CNN
