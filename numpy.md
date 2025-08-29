@@ -110,15 +110,11 @@ Operaciones básicas: add(), subtract(), multiply(), divide().
 `std`
         Calcular la desviación estándar de los elementos en un array
 
-
-
 `diag()`
         Puede hacer dos cosas:
 1.  Extraer la diagonal de una matriz.
 2.  Crear una matriz diagonal a partir de un array unidimensional.
     
-
-
 
 ### Forma y Tamaño de una matriz
 ### ndarray.metodo()

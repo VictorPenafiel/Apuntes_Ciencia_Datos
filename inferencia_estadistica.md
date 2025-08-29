@@ -153,7 +153,6 @@
 
 ### **Pruebas\_Hipotesis**
 
-
   * **Prueba de Hipótesis**:
 
       * Procedimiento estadístico para tomar una decisión sobre una afirmación acerca de un parámetro poblacional, basándose en la evidencia de una muestra.
@@ -168,8 +167,7 @@
           * Si `p-value ≥ α`, **no se puede rechazar** la hipótesis nula H₀.
 
   * **Tipos de Pruebas**:
-
+  
       * **Prueba Z**: Para la media, cuando σ poblacional es conocida o `n` es grande.
       * **Prueba T**: Para la media, cuando σ poblacional es desconocida y `n` es pequeña.
       * **Pruebas para proporciones** y para **comparar dos muestras**.
-
