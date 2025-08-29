@@ -6,13 +6,13 @@
 * **Conceptos Fundamentales**:
     * **Objetivo**: Introducir la taxonomía del aprendizaje supervisado.
     * **Contenido**:
-        * **Regresión vs. Clasificación**: Se define la diferencia fundamental: la regresión predice valores continuos (ej. precio de una casa), mientras que la clasificación predice etiquetas discretas (ej. spam o no spam).
-        * **División de Datos**: Se explica el protocolo esencial de dividir los datos usando `train_test_split` de Scikit-Learn en conjuntos de **entrenamiento** (para ajustar el modelo), **validación** (para ajustar hiperparámetros) y **prueba** (para una evaluación final e imparcial).
+        * **Regresión vs. Clasificación**: La diferencia fundamental es que la regresión predice valores continuos (ej. precio de una casa), mientras que la clasificación predice etiquetas discretas (ej. spam o no spam).
+        * **División de Datos**: Se aplica el protocolo esencial de dividir los datos usando `train_test_split` de Scikit-Learn en conjuntos de **entrenamiento** (para ajustar el modelo), **validación** (para ajustar hiperparámetros) y **prueba** (para una evaluación final e imparcial).
 
 * **Preprocesamiento y Selección de Modelos**:
     * **Objetivo**: Demostrar los pasos prácticos de preparación de datos y optimización de modelos.
     * **Contenido Técnico**:
-        * **Pipelines**: Se introduce el objeto `Pipeline` de Scikit-Learn para encapsular y secuenciar transformaciones de datos y el ajuste del modelo, garantizando un flujo de trabajo limpio y sin fuga de datos.
+        * **Pipelines**: Se ocupa el objeto `Pipeline` de Scikit-Learn para encapsular y secuenciar transformaciones de datos y el ajuste del modelo, garantizando un flujo de trabajo limpio y sin fuga de datos.
         * **Codificación de Categóricas**: Se utiliza `OneHotEncoder` para convertir variables categóricas en una representación numérica binaria.
         * **Escalado de Características**: Se aplica `StandardScaler` para estandarizar las características numéricas (media 0, desviación estándar 1), un requisito para muchos algoritmos como SVM y Regresión Logística.
         * **Optimización de Hiperparámetros**: Se implementa `GridSearchCV`, una técnica de búsqueda exhaustiva combinada con validación cruzada (`cross-validation`) para encontrar la mejor combinación de hiperparámetros para un modelo de forma automatizada y robusta.
@@ -20,6 +20,22 @@
 [Modelos para entender una realidad caótica](https://www.youtube.com/watch?v=Sb8XVheowVQ&t=306shttps://www.youtube.com/watch?v=Sb8XVheowVQ&t=306s)
 
 [Principales Algoritmos usados en Machine Learning](https://www.aprendemachinelearning.com/principales-algoritmos-usados-en-machine-learning/)
+
+
+#### Conceptos Teóricos Fundamentales
+
+* **Objetivo**: Explicar la teoría detrás del error del modelo.
+* **Contenido**:
+    * **Descomposición del Error**: El error de generalización de un modelo se descompone en **sesgo (bias)**, **varianza (variance)** y **error irreducible**.
+    * **Sesgo (Bias)**: Error por suposiciones erróneas. Un alto sesgo causa **subajuste (underfitting)**.
+    * **Varianza**: Error por sensibilidad a los datos de entrenamiento. Una alta varianza causa **sobreajuste (overfitting)**.
+    * **El Trade-Off**: El núcleo del aprendizaje automático. Aumentar la complejidad de un modelo generalmente reduce el sesgo pero aumenta la varianza. El objetivo es encontrar el punto óptimo de complejidad que minimice el error total.
+
+#### Descomposición del error cuadrático medio (MSE)
+
+    Error Total=(Sesgo)2+Varianza+Error Irreducible
+    E[(y−f^​(x))2]=(E[f^​(x)]−f(x))2+E[(f^​(x)−E[f^​(x)])2]+σϵ2​
+
 
 #### Modelos de Regresión
 
@@ -58,14 +74,4 @@
     * **Árboles de Decisión**: Modelos no paramétricos que aprenden reglas de decisión simples inferidas de los datos. Son muy interpretables pero propensos al sobreajuste.
     * **Random Forest**: Un método de **ensamble** que corrige la tendencia al sobreajuste de los árboles de decisión. Construye múltiples árboles de decisión durante el entrenamiento y emite la clase que es el modo de las clases de los árboles individuales. Introduce aleatoriedad mediante **bagging** (muestreo con reemplazo de los datos) y selección aleatoria de subconjuntos de características en cada división.
 
-#### Conceptos Teóricos Fundamentales
-
-* **Objetivo**: Explicar la teoría detrás del error del modelo.
-* **Contenido**:
-    * **Descomposición del Error**: El error de generalización de un modelo se descompone en **sesgo (bias)**, **varianza (variance)** y **error irreducible**.
-    * **Sesgo (Bias)**: Error por suposiciones erróneas. Un alto sesgo causa **subajuste (underfitting)**.
-    * **Varianza**: Error por sensibilidad a los datos de entrenamiento. Una alta varianza causa **sobreajuste (overfitting)**.
-    * **El Trade-Off**: El núcleo del aprendizaje automático. Aumentar la complejidad de un modelo generalmente reduce el sesgo pero aumenta la varianza. El objetivo es encontrar el punto óptimo de complejidad que minimice el error total.
-
----
 

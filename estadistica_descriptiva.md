@@ -1,7 +1,6 @@
 
 -----
 
-
 * **1. Población**: Corresponde al conjunto completo de individuos de interés. En este caso, son **todos los alumnos de Enseñanza Media de establecimientos municipales de la Región Metropolitana** durante octubre de 2020.
 
 * **2. Muestra**: Es el subconjunto de la población que fue efectivamente estudiado. Aquí, la muestra es **el grupo de alumnos seleccionados aleatoriamente, correspondiente al 10% de la matrícula de cada establecimiento**.

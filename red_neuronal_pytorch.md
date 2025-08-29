@@ -3,9 +3,6 @@
 
 # 🎓 Creación de Redes Neuronales en PyTorch 
 
-¡Bienvenido/a a esta lección sobre PyTorch\! En este notebook, vamos a desmitificar el proceso de creación de redes neuronales. PyTorch es una de las librerías más potentes y flexibles para Deep Learning, famosa por su enfoque "Pythonico" y su facilidad para depurar modelos.
-
-📌 **Objetivo Principal**: Nuestro foco hoy no es entrenar un modelo, sino entender a la perfección sus **bloques de construcción (building blocks)**. Al final de esta sesión, sabrás exactamente cómo estructurar una arquitectura de red neuronal y cómo fluyen los datos a través de ella.
 
 ### 🗺️ Hoja de Ruta
 
@@ -14,13 +11,11 @@
 3.  **Construir el Modelo**: Definiremos nuestra primera red neuronal usando la clase `nn.Module`, el estándar en PyTorch.
 4.  **El Viaje de los Datos (Forward Pass)**: Pasaremos datos de ejemplo a través de la red para ver qué sucede.
 5.  **Interpretar los Resultados**: Transformaremos la salida cruda del modelo en algo útil, como probabilidades.
-6.  **¡A Practicar\!**: Resolveremos ejercicios para afianzar lo aprendido.
 
 -----
 
 ## 1\. Preparar el Entorno 🛠️
 
-Toda construcción necesita herramientas. Lo primero es importar las librerías que nos permitirán construir nuestra red.
 
 ```python
 # La librería principal de PyTorch
@@ -44,7 +39,6 @@ print(f"Dispositivo seleccionado: {device}")
 
 ## 2\. Conceptos Clave Antes de Construir 🧠
 
-Antes de poner ladrillos, hay que entender los planos. Estos son los conceptos esenciales.
 
 ### 2.1 La Importancia de la Forma de los Tensores (Shapes)
 
@@ -55,7 +49,6 @@ Imagina los datos como una hoja de cálculo. Un **tensor** en PyTorch es como es
 
 Las capas de PyTorch, como `nn.Linear(in_features, out_features)`, son muy estrictas con las dimensiones. La `in_features` de una capa **debe coincidir** con el número de características de los datos que recibe.
 
-> **Analogía 📐**: Es como conectar tuberías. El diámetro de salida de una tubería debe ser igual al diámetro de entrada de la siguiente. Si `capa1` saca datos con 4 características, `capa2` debe estar preparada para recibir 4 características.
 
 ### 2.2 Inicialización de Pesos
 

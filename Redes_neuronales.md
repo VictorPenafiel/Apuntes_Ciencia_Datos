@@ -121,6 +121,13 @@ Aquí medimos qué tan equivocada estuvo la predicción del modelo.
 * Se compara la predicción del modelo ($y_{pred}$) con el valor real y verdadero ($y_{real}$) utilizando una **función de pérdida (Loss Function)**, como el Error Cuadrático Medio (MSE) o la Entropía Cruzada.
 * Esta función calcula un único valor numérico (el **error** o **pérdida**) que cuantifica la discrepancia total del modelo. Un error más bajo significa una mejor predicción.
 
+función de coste (o pérdida) de error cuadrático medio, también conocida como MSE (Mean Squared Error)
+<br>
+$$
+\large \ell = \frac{1}{2n}\sum_i^n{\left(y_i - \hat{y}_i\right)^2}
+$$
+<br>
+
 #### **3. Propagación hacia Atrás y Cálculo del Gradiente (Backpropagation)** ⬅️
 
 Esta es la fase más crucial, donde la red aprende de su error.

@@ -6,7 +6,8 @@ Un tensor es un vector o matriz de n dimensiones que representa todo tipo de dat
 # Keras
 
 ## TensorFlow y tf.keras
-````
+
+```Python
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
@@ -16,7 +17,8 @@ print(tf.__version__)
 ````
 
 ##  base para clasificación de imágenes
-````
+
+```Python
 import tensorflow as tf
 mnist = tf.keras.datasets.mnist
 
@@ -36,10 +38,11 @@ model.compile(optimizer='adam',
 
 model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
-````
+```
 ---------------------------------------------------------------------------------------------
 ## base para clasificación de imágenes 2
-````
+
+```Python
 import tensorflow as tf
 print("TensorFlow version:", tf.__version__)
 
@@ -78,10 +81,11 @@ probability_model = tf.keras.Sequential([
 ])
 
 probability_model(x_test[:5])
-````
--------------------------------------------------------------------------------------
+```
+
 ## base para clasificación de imágenes 3
-````
+
+```Python
 import tensorflow as tf
 print("TensorFlow version:", tf.__version__)
 
@@ -174,28 +178,28 @@ for epoch in range(EPOCHS):
     f'Test Loss: {test_loss.result()}, '
     f'Test Accuracy: {test_accuracy.result() * 100}'
   )
-````
+```
 -------------------------------------------------------------------------------------------
 
-# Ejemplo_clasificacion_imagenes
-Predecir una imagen de moda 
+## Ejemplo_clasificacion_imagenes, Predecir una imagen de moda
 
 ## TensorFlow and tf.keras
     import tensorflow as tf
 
 ## Helper libraries
-    import numpy as np
-    import matplotlib.pyplot as plt
+```Python
+  import numpy as np
+  import matplotlib.pyplot as plt
 
-    print(tf.__version__)
+  print(tf.__version__)
 
-    fashion_mnist = tf.keras.datasets.fashion_mnist
+  fashion_mnist = tf.keras.datasets.fashion_mnist
 
-    (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+  (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
 
-    class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+  class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-
+```
 
 ## Explorando datos
     train_images.shape
@@ -229,6 +233,7 @@ Para verificar que el set de datos esta en el formato adecuado y que estan listo
     plt.show()
 
 ## Generar modelo
+```Python
 Configurar las Capas
     model = tf.keras.Sequential([
         tf.keras.layers.Flatten(input_shape=(28, 28)),
@@ -348,6 +353,5 @@ Los modelos de tf.keras son optimizados sobre batch o bloques, o coleciones de e
     plt.show()
 
     np.argmax(predictions_single[0])
-
-````
+```
 
