@@ -25,9 +25,9 @@
 
 * **Objetivo**: Explicar la teoría detrás del error del modelo.
 * **Contenido**:
-    * **Descomposición del Error**: El error de generalización de un modelo se descompone en **sesgo (bias)**, **varianza (variance)** y **error irreducible**.
+    * **Descomposición del Error**: El error de generalización de un modelo se descompone en **sesgo**, **varianza** y **error irreducible**.
     * **Sesgo (Bias)**: Error por suposiciones erróneas. Un alto sesgo causa **subajuste (underfitting)**.
-    * **Varianza**: Error por sensibilidad a los datos de entrenamiento. Una alta varianza causa **sobreajuste (overfitting)**.
+    * **Varianza(Variance)**: Error por sensibilidad a los datos de entrenamiento. Una alta varianza causa **sobreajuste (overfitting)**.
     * **El Trade-Off**: El núcleo del aprendizaje automático. Aumentar la complejidad de un modelo generalmente reduce el sesgo pero aumenta la varianza. El objetivo es encontrar el punto óptimo de complejidad que minimice el error total.
 
 #### Descomposición del error cuadrático medio (MSE)
@@ -38,10 +38,25 @@
 
 #### Modelos de Regresión
 
-* **Objetivo**: Profundizar en el modelo de regresión más fundamental.
-* **Contenido Técnico**:
-    * **Regresión Lineal Simple**: Se modela la relación entre variables usando la ecuación $y = \beta_0 + \beta_1 x$. Se implementa con la clase `LinearRegression` de Scikit-Learn.
-    * **Regresión Polinomial**: Se demuestra cómo los modelos lineales pueden capturar relaciones no lineales. Esto se logra creando características polinómicas (ej. $x^2, x^3$) a partir de las características originales usando `PolynomialFeatures`. Técnicamente, el modelo sigue siendo lineal en sus coeficientes, pero la curva resultante se ajusta a los datos de forma no lineal.
+
+* **Regresión Lineal Simple**: Se modela la relación entre variables usando la ecuación
+
+    $y = \beta_0 + \beta_1 x$. 
+
+    y es la variable dependiente o la variable que estamos tratando de predecir. Piensa en ella como la salida de un programa.
+
+    x es la variable independiente o la variable que usamos para hacer la predicción. Sería la entrada a tu programa.
+
+    β0​ y β1​, son los parámetros o coeficientes del modelo. Estos valores son los que el algoritmo de regresión "aprende" a partir de tus datos para que la línea se ajuste lo mejor posible a ellos.
+
+    β0​ (beta cero) es el intercepto (intercept) o el valor de y cuando x es igual a cero. Es el punto donde la línea de regresión cruza el eje Y.
+
+    β1​ (beta uno) es la pendiente (slope) de la línea de regresión. Nos dice cuánto cambia y por cada unidad de cambio en x. Es la inclinación de la línea.
+
+    Se puede implementar con la clase `LinearRegression` de Scikit-Learn.
+
+
+* **Regresión Polinomial**: Se demuestra cómo los modelos lineales pueden capturar relaciones no lineales. Esto se logra creando características polinómicas (ej. $x^2, x^3$) a partir de las características originales usando `PolynomialFeatures`. Técnicamente, el modelo sigue siendo lineal en sus coeficientes, pero la curva resultante se ajusta a los datos de forma no lineal.
 
 #### Modelos de Clasificación
 

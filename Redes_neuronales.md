@@ -1,6 +1,7 @@
 # Machine learning
 El machine learning es una rama de la inteligencia artificial (IA) centrada en entrenar a computadoras y máquinas para imitar el modo en que aprenden los humanos, realizar tareas de forma autónoma y mejorar su rendimiento y precisión a través de la experiencia y la exposición a más datos.
 
+[El Futuro de las Computadoras Será Radicalmente Diferente](https://www.youtube.com/watch?v=qNtxODk_Lmk)
 [¿Qué es el Machine Learning?¿Y Deep Learning? ](https://www.youtube.com/watch?v=KytW151dpqU&list=PL-Ogd76BhmcC_E2RjgIIJZd1DQdYHcVf0)
 
 ## Etiqueta (label o target) 

@@ -169,7 +169,7 @@ Este es un submódulo importante:
 `inv()`
         Calcula la inversa de una matriz.
 
-` det()`
+`det()`
         Calcula el determinante de una matriz.
 
 `eig()`

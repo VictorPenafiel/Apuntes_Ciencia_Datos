@@ -101,8 +101,6 @@
 
 ### Conceptos\_Básicos-Parte2.
 **
-
-
   * **Ley de los Grandes Números**:
 
       * Afirma que, si un experimento se repite un gran número de veces, la frecuencia relativa de un evento convergerá a su probabilidad teórica. Es la razón por la que el muestreo funciona.

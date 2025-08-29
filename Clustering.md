@@ -13,6 +13,7 @@ Evaluación de los Clusters: Se aplican métricas para evaluar la calidad de los
 4. Calcular la diferencia entre el antiguo y el nuevo centroide y repetir los pasos 2 y 3 si la diferencia es menor que un umbral (convergente).
 
 [K-means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans)
+
 [K-means_traduccion](https://qu4nt.github.io/sklearn-doc-es/modules/clustering.html#k-means)
 
 [k-means-clustering](https://www.ibm.com/mx-es/think/topics/k-means-clustering)
