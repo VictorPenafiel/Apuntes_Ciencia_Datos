@@ -1,6 +1,6 @@
 [¡Redes Neuronales CONVOLUCIONALES!](https://www.youtube.com/watch?v=ysqpl6w6Wzg)
+
 [¡Redes Neuronales CONVOLUCIONALES! ¿Cómo funcionan?](https://www.youtube.com/watch?v=V8j1oENVz00&t=471s)
------
 
 ## Fundamentos de Redes Neuronales Convolucionales (CNNs)
 
