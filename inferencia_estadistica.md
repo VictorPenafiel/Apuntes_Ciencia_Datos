@@ -20,7 +20,10 @@
     La probabilidad es la posibilidad a largo plazo de que se produzca un determinado resultado de algún proceso aleatorio.
 
     [Una_historia](https://www.bbc.com/mundo/articles/cr7240y4v9jo)
+
     [¿Que es el caos?](https://www.youtube.com/watch?v=EOvLhZPevm0)
+
+    [La Extraña Matemática Que Predice (Casi) Todo](https://www.youtube.com/watch?v=6pO6Mm2qJaE&t=1013s)
 
     **Espacio muestral**:
     El conjunto de todos los posibles resultados del experimento. Se denota con la letra $\Omega$
@@ -28,7 +31,7 @@
     $$\Omega = \{1, 2, 3, 4, 5, 6\}
     $$
 
-    **evento**:
+    **Evento**:
     Cualquier subconjunto del espacio muestral. Se denota con cualquier letra mayúscula. Ejemplo: sea $A$: lanzar el dado y obtener un número par
     $$
     A = \{2, 4, 6\}

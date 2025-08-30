@@ -71,9 +71,7 @@ Este modelo se compila con un optimizador y una función de pérdida, se entrena
 
 -----
 
-
 ### Kernels (Fundamentos)
-
 
 ```python
 
