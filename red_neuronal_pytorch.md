@@ -17,6 +17,8 @@
 ## 1\. Preparar el Entorno 🛠️
 
 
+[¿Por qué las GPUs son buenas para la IA?](https://www.youtube.com/watch?v=C_wSHKG8_fg&t=1949s)
+
 ```python
 # La librería principal de PyTorch
 import torch
@@ -24,7 +26,6 @@ import torch
 import torch.nn as nn
 # init nos da control sobre cómo se inicializan los pesos del modelo
 import torch.nn.init as init
-
 # --- Configuración del Dispositivo ---
 # El Deep Learning es computacionalmente intensivo. Las GPUs (Graphics Processing Units)
 # pueden acelerar los cálculos masivamente gracias a su arquitectura paralela.
