@@ -21,21 +21,19 @@ la orientación a los problemas,
 la correlación
 El pensamiento general y orientado a los detalles.
 
-Las fases del proceso de análisis de datos son preguntar, preparar, procesar, analizar, compartir y actuar.
+### Fases del proceso de analisis de datos
 
-### Proceso de análisis de datos:
+    Formular preguntas y definir el problema.
 
-    Pregunte a
+    Preparar los Datos recopilando y almacenando la Información.
 
-    Prepare
+    Procese los datos limpiando y comprobando la información.
 
-    Procesar
+    Analice los Datos para encontrar Patrones, Relaciones y Tendencias.
 
-    Analizar
+    Comparta los Datos con su público.
 
-    Compartir
-
-    Actuar
+    Actúe sobre los Datos y utilice los resultados del análisis.
     
 Los datos prácticamente en todas partes. Cada vez que observa y evalúa algo en el mundo, está recopilando y analizando datos. Su análisis le ayuda a encontrar formas más sencillas de hacer las cosas, a identificar patrones que le ahorran tiempo y a descubrir nuevas perspectivas sorprendentes que pueden cambiar por completo su forma de experimentar las cosas.
 
@@ -80,24 +78,6 @@ Ciclo de vida de los datos basado en la investigación de la Universidad de Harv
 
     Interpretación
 
-
----
-
-### Ciclo de vida de analisis de datos
-
-
-    Formular preguntas y definir el problema.
-
-    Preparar los Datos recopilando y almacenando la Información.
-
-    Procese los datos limpiando y comprobando la información.
-
-    Analice los Datos para encontrar Patrones, Relaciones y Tendencias.
-
-    Comparta los Datos con su público.
-
-    Actúe sobre los Datos y utilice los resultados del análisis.
-
 ---
 
 ## <font color='blue'>**1D-CNN aplicado a series de tiempo univariadas.**</font>
@@ -121,7 +101,6 @@ El primer paso de la preparación es la limpieza y estructuración de los datos.
         3. Usando la moda
         4. Calcular una medición apropiada y reemplazar los NAs.
         5. Utilizar modelos estadísticos y de Machine Leaning.
-
 
 * **Orden Cronológico:** A continuación, se asegura la integridad cronológica de la serie. Dado que en las series de tiempo **el orden es primordial**, se crea una columna `datetime` unificada y se ordena el DataFrame para garantizar que las observaciones estén en la secuencia correcta.
 

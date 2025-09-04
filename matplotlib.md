@@ -41,6 +41,7 @@ plt.show()
 ----------------------------------------------------------------------------------------------------------------------
 
 ## Histogramas
+Usalo para analizar la distribucion de una variable continua.
 
 hist(x, bins)
 
@@ -65,6 +66,7 @@ plt.show()
 ````
 
 ## Diagramas de caja y bigotes (boxplot)
+Perfecto para detectar outliers y analizar la dispersión
 
 boxplot(x)
 
@@ -98,6 +100,7 @@ plt.show()
 ````
 
 ## Diagramas de dispersión o puntos
+Ideal para ver las relaciones entre dos variables numéricas.
 
 scatter(x, y)
 
@@ -110,6 +113,7 @@ plt.show()
 ````
 
 ## Diagramas de líneas
+Usalo para tendencias en el tiempo.
 
 plot(x, y)
 
@@ -136,6 +140,7 @@ plt.show()
 ````
 
 ## Diagramas de areas
+Utilizada para mostrar la evolución de una o más series de datos a lo largo de un eje continuo, generalmente el tiempo. 
 
 fill_between(x, y)
 
@@ -149,6 +154,7 @@ plt.show()
 ````
 
 ## Diagramas de barras verticales
+Mejor para comparar categorías
 
 bar(x, y)
 
@@ -165,6 +171,7 @@ ax.bar_label(bar_container, fmt='{:,.0f}')
 ````
 
 ## Diagramas de barras horizontales
+Se utiliza para comparar magnitudes entre diferentes categorías.
 
 barh(x, y)
 
@@ -178,6 +185,7 @@ plt.show()
 ````
 
 ## Diagramas de sectores
+Se usa para representar la proporción de cada categoría en relación con un todo.
 
 pie(x)
 
@@ -191,6 +199,7 @@ plt.show()
 ````
 
 ## Diagramas de violín
+Se utiliza para visualizar la distribución de datos numéricos y comparar esas distribuciones entre diferentes categorías. Es una combinación de un diagrama de caja y un gráfico de densidad de kernel
 
 violinplot(x)
 
@@ -204,6 +213,7 @@ plt.show()
 ````
 
 ## Diagramas de contorno
+Se utiliza para representar tres variables en un espacio bidimensional.
 
 contourf([X, Y,] Z, /, [levels], **kwargs)
 
@@ -221,6 +231,8 @@ plt.show()
 ````
 
 ## Mapas de color
+Se utiliza para representar la magnitud de los valores en una matriz bidimensional mediante un degradado de colores.
+
 imshow(x)
 
 [mapas_color](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow)
